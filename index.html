@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where Angus comes from</title>
+<link rel="preload" as="image" href="img/groningen.jpg">
+<link rel="preload" as="image" href="img/parkinson-wedding-1935.jpg">
+<link rel="preload" as="image" href="img/fairsea.jpg">
+<link rel="preload" as="image" href="img/macdhui.jpg">
+<link rel="preload" as="image" href="img/kalgoorlie-hannan-street-1901.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet, tender, archival; a family album being opened for the first time
+   IDEA: an archive drawer. Photographs develop as you reach them; the tree uncovers a generation at a time
+   PICTURE: the living family tree, and old photographs that develop from blank paper
+   COLOUR and TYPE: white paper, near-black ink; each family line keeps its own colour (Delft blue, goldfields ochre, Yarra green, Groningen brick, Coral Sea teal). Instrument Serif + Inter
+   LAYOUT: hero with a spread of photographs, then the tree, eight chapters walking back and forth in time, voyages ledger, timeline, open questions */
+:root{color-scheme:light;--bg:#fbfaf8;--paper:#ffffff;--ink:#1c1b19;--soft:#5f5b55;--faint:#8d8880;--rule:#e6e2db;--b:#2f5b9a;--f:#a8741c;--p:#4b7a52;--h:#a4442e;--y:#23797f;--r:#55514b;--a:#1c1b19;--serif:'Instrument Serif',Georgia,'Times New Roman',serif;--sans:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:#c9c3b9;text-underline-offset:3px}
+a:hover{text-decoration-color:currentColor}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+.band{padding:clamp(48px,7vw,104px) max(5vw,18px)}
+.wrap{max-width:1240px;margin:0 auto}
+.kick{font-size:13px;color:var(--soft);letter-spacing:.01em;margin-bottom:14px;display:flex;gap:10px;align-items:center}
+.kick i{display:inline-block;width:28px;height:1px;background:currentColor;opacity:.5}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:30;background:rgba(251,250,248,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .4s}
+nav.top.sc{border-color:var(--rule)}
+nav.top .in{max-width:calc(1240px + 2*max(5vw,18px));margin:0 auto;display:flex;align-items:center;gap:20px;padding:0 max(5vw,18px);height:58px}
+.brand{font-family:var(--serif);font-size:22px;text-decoration:none;white-space:nowrap}
+.links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links .lines,.links a{flex:none}
+.links a{font-size:14px;text-decoration:none;color:var(--soft);padding:10px 10px;position:relative;white-space:nowrap}
+.links a::after{content:"";position:absolute;left:10px;right:10px;bottom:6px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.links a.on{color:var(--ink)}.links a.on::after{transform:scaleX(1)}
+.links .lines{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:7px 14px 7px 12px;margin:0 8px 0 2px;cursor:pointer;white-space:nowrap;transition:border-color .3s,box-shadow .3s}
+.links .lines:hover,.links .lines[aria-expanded=true]{border-color:#cfc9bf;box-shadow:0 2px 10px rgba(28,27,25,.06)}
+.lines .dots{display:inline-flex;gap:3px}.lines .dots b{width:6px;height:6px;border-radius:50%;display:block}
+.lines svg{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.lines[aria-expanded=true] svg{transform:rotate(180deg)}
+/* family lines panel */
+.lp{position:absolute;left:0;right:0;top:58px;padding:0 max(5vw,18px);pointer-events:none;z-index:31}
+.lp .box{max-width:1240px;margin:8px auto 0;background:var(--paper);border:1px solid var(--rule);border-radius:16px;box-shadow:0 24px 60px -20px rgba(28,27,25,.22);padding:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;opacity:0;transform:translateY(-8px) scale(.99);transform-origin:top center;transition:opacity .35s,transform .45s cubic-bezier(.2,.7,.2,1);max-height:calc(100vh - 90px);overflow:auto}
+.lp.open{pointer-events:auto}.lp.open .box{opacity:1;transform:none}
+.lp .grp{border-radius:12px;padding:16px 16px 10px;background:color-mix(in srgb,var(--c) 5%,#fff);border:1px solid color-mix(in srgb,var(--c) 14%,#fff);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.lp.open .grp{opacity:1;transform:none}
+.lp .grp .who{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--c);font-weight:600;display:flex;align-items:center;gap:8px}
+.lp .grp .who i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.lp .grp .sn{font-family:var(--serif);font-size:23px;line-height:1.15;margin:8px 0 12px}
+.lp .grp a{display:grid;grid-template-columns:22px minmax(0,1fr);gap:0 8px;text-decoration:none;padding:9px 8px;margin:0 -8px;border-radius:8px;transition:background .25s}
+.lp .grp a:hover,.lp .grp a:focus-visible{background:color-mix(in srgb,var(--c) 10%,#fff);outline:none}
+.lp .grp a .n{font-family:var(--serif);font-size:19px;color:var(--c);line-height:1.2}
+.lp .grp a .t{font-size:14.5px;line-height:1.35}.lp .grp a .d{grid-column:2;font-size:12.5px;color:var(--faint)}
+.lp .foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid var(--rule);padding-top:14px;margin-top:2px}
+.lp .foot a{font-size:14px;text-decoration:none;padding:7px 12px;border-radius:999px;border:1px solid var(--rule);color:var(--soft);transition:color .25s,border-color .25s}
+.lp .foot a:hover{color:var(--ink);border-color:#cfc9bf}
+.lp .foot a.meet{color:var(--ink);background:#f4f2ee;border-color:transparent}
+.lscrim{position:fixed;inset:0;background:rgba(28,27,25,.12);opacity:0;pointer-events:none;transition:opacity .35s;z-index:29}
+.lscrim.on{opacity:1;pointer-events:auto}
+/* chapter rail */
+.rail{max-width:calc(1240px + 2*max(5vw,18px));margin:0 auto;padding:0 max(5vw,18px);height:0;overflow:hidden;opacity:0;transition:height .45s cubic-bezier(.2,.7,.2,1),opacity .35s}
+nav.top.inch .rail{height:46px;opacity:1}
+.rail .rw{display:flex;align-items:center;height:46px;gap:10px}
+.rail .cur{flex:none;display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--c,var(--soft));width:178px;transition:color .4s}
+.rail .cur i{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.rail .cur span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail .cur.sw span{animation:swap .5s cubic-bezier(.2,.7,.2,1)}
+.rail .sep{flex:none;width:1px;height:16px;background:var(--rule);margin:0 4px}
+.rail .tr{flex:1;display:flex;align-items:center;gap:2px;height:46px;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 24px),transparent)}
+.rail .tr::-webkit-scrollbar{display:none}
+.rail .gl{display:none;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--c);font-weight:600;white-space:nowrap;padding:0 2px 0 10px;opacity:.85}
+.rail .gl:first-child{padding-left:4px}
+.rail a{flex:none;position:relative;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;text-decoration:none;font-size:13.5px;color:var(--soft);padding:6px 12px;border-radius:999px;transition:color .3s,background .3s}
+.rail a .n{font-family:var(--serif);font-size:16px;color:var(--c);line-height:1}
+.rail a:hover{color:var(--ink);background:color-mix(in srgb,var(--c) 7%,transparent)}
+.rail a.on{color:var(--ink);background:color-mix(in srgb,var(--c) 13%,#fff)}
+.rail .pg{position:absolute;left:0;bottom:0;height:2px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--pc,var(--ink));transition:background .4s}
+nav.top .pgw{position:relative;height:2px;margin-top:-2px;pointer-events:none}
+.navera{font-family:var(--serif);font-size:20px;color:var(--soft);display:none;min-width:52px;text-align:right}
+
+/* era dial */
+.era{position:fixed;right:max(1.6vw,10px);top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:10px;pointer-events:none;opacity:0;transition:opacity .6s}
+.era.show{opacity:1}
+.era .line{width:1px;height:90px;background:linear-gradient(var(--rule),var(--faint))}
+.era .yr{font-family:var(--serif);font-size:26px;writing-mode:vertical-rl;transform:rotate(180deg);color:var(--ink)}
+.era .lb{font-size:11px;color:var(--faint);writing-mode:vertical-rl;transform:rotate(180deg)}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) max(5vw,18px) clamp(36px,5vw,72px);text-align:center}
+.hero .kick{justify-content:center}
+.hero h1{font-size:clamp(46px,8.4vw,108px);letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--soft)}
+.hero .sub{max-width:640px;margin:22px auto 0;color:var(--soft);font-size:17px}
+.spread{position:relative;height:clamp(230px,34vw,420px);max-width:1100px;margin:clamp(30px,5vw,56px) auto 0}
+.spread figure{position:absolute;margin:0;background:#fff;padding:clamp(5px,.8vw,10px) clamp(5px,.8vw,10px) clamp(18px,2.4vw,30px);box-shadow:0 1px 2px rgba(0,0,0,.06),0 18px 40px -18px rgba(40,30,20,.35);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.spread figure:hover{transform:var(--t) translateY(-8px)!important}
+.spread img{display:block;width:100%;height:100%;object-fit:cover}
+.spread figcaption{position:absolute;left:0;right:0;bottom:4px;font-family:var(--serif);font-style:italic;font-size:clamp(11px,1.2vw,14px);color:var(--soft);text-align:center}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,5vw,64px);margin-top:clamp(28px,4vw,48px)}
+.stats div{text-align:center}
+.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,52px);line-height:1}
+.stats span{font-size:13px;color:var(--soft)}
+.begin{display:inline-flex;align-items:center;gap:10px;margin-top:36px;padding:13px 22px;min-height:44px;border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-size:15px;transition:background .3s,color .3s}
+.begin:hover{background:var(--ink);color:#fff}
+.begin svg{transition:transform .4s}.begin:hover svg{transform:translateY(3px)}
+
+/* develop: photographs come up out of blank paper */
+.dev img{filter:sepia(1) brightness(1.55) contrast(.35) blur(7px);opacity:.25;transform:scale(1.025);transition:filter 2.4s cubic-bezier(.3,.6,.2,1),opacity 1.6s ease,transform 2.8s cubic-bezier(.2,.7,.2,1)}
+.dev.in img{filter:sepia(.18) contrast(1.02);opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* tree */
+#tree{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.thead{display:flex;flex-wrap:wrap;gap:18px 40px;align-items:end;justify-content:space-between;margin-bottom:22px}
+.thead h2{font-size:clamp(36px,4.6vw,52px)}
+.thead p{max-width:520px;color:var(--soft);margin:12px 0 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tbtn{min-height:44px;min-width:44px;padding:0 14px;border:1px solid var(--rule);background:#fff;border-radius:999px;cursor:pointer;font-size:14px;transition:border-color .3s,background .3s}
+.tbtn:hover{border-color:var(--ink)}
+.tbtn:focus-visible,.links a:focus-visible,.chip:focus-visible,.pp:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.search{position:relative}
+.search input{height:44px;width:min(240px,62vw);border:1px solid var(--rule);border-radius:999px;padding:0 16px;font:16px var(--sans);background:#fff;color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--ink)}
+.res{position:absolute;top:50px;left:0;right:0;min-width:260px;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 18px 40px -20px rgba(0,0,0,.3);z-index:5;overflow:hidden;display:none}
+.res button{display:block;width:100%;text-align:left;border:0;background:none;padding:10px 14px;cursor:pointer;font-size:14px}
+.res button:hover,.res button.k{background:#f3f1ed}
+.res small{color:var(--faint);margin-left:6px}
+.stage{position:relative;height:min(76vh,720px);min-height:440px;border:1px solid var(--rule);border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 100%,#fff 0,#f7f5f1 70%);touch-action:none;cursor:grab}
+.stage.drag{cursor:grabbing}
+.stage svg{position:absolute;inset:0;width:100%;height:100%}
+.tgo{display:none;position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:3;align-items:center;gap:8px;font:500 14px var(--sans);color:var(--ink);background:rgba(255,255,255,.95);border:1px solid var(--rule);border-radius:999px;padding:10px 16px;box-shadow:0 8px 24px -12px rgba(28,27,25,.35);white-space:nowrap}
+.stage .tgo svg{flex:none;position:static;width:16px;height:16px;inset:auto}
+.tdone{display:none;position:absolute;top:12px;right:12px;z-index:3;font:500 13.5px var(--sans);color:#fff;background:var(--ink);border:0;border-radius:999px;padding:8px 14px}
+@media(pointer:coarse){
+  .stage{touch-action:pan-y;cursor:default}
+  .stage .tgo{display:inline-flex}
+  .stage.live{touch-action:none;box-shadow:0 0 0 2px var(--ink)}
+  .stage.live .tgo{display:none}.stage.live .tdone{display:block}
+  .stage.live .mini{bottom:12px}
+}
+.hint{position:absolute;left:16px;bottom:12px;font-size:12.5px;color:var(--faint);pointer-events:none}
+.mini{position:absolute;right:12px;bottom:12px;width:200px;height:120px;background:rgba(255,255,255,.92);border:1px solid var(--rule);border-radius:10px;box-shadow:0 10px 24px -16px rgba(0,0,0,.35);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .4s;touch-action:none}
+.mini.on{opacity:1;pointer-events:auto}
+.mini canvas{display:block;width:100%;height:100%;border-radius:10px}
+@media(max-width:600px){.mini{width:140px;height:86px}.hint{display:none}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:13.5px;color:var(--soft)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:50%}
+.nd{cursor:pointer}
+.nd rect.c{fill:#fff;stroke:#ddd8cf;transition:stroke .3s}
+.nd:hover rect.c{stroke:#9d968b}
+.nd.sel rect.c{stroke:var(--ink);stroke-width:1.6}
+.nd text{font-family:var(--sans);pointer-events:none}
+.nd .nm{font-size:12.5px;font-weight:600;fill:var(--ink)}
+.nd .dt{font-size:11px;fill:var(--soft)}
+.nd.ghost rect.c{fill:none;stroke:#bdb6aa;stroke-dasharray:4 4}
+.nd.ghost .nm{font-weight:500;fill:var(--soft);font-style:italic}
+.nd.new{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0}to{opacity:1}}
+.ub{cursor:pointer}
+.ub circle{fill:#fff;stroke:#bdb6aa;transition:fill .3s,stroke .3s}
+.ub circle.hit,.ub:hover circle.hit{fill:transparent;stroke:none}
+.ub:hover circle{fill:var(--ink);stroke:var(--ink)}
+.ub path{stroke:var(--soft);stroke-width:1.5;fill:none}
+.ub:hover path{stroke:#fff}
+.ed{fill:none;stroke:#cfc9bf;stroke-width:1.3}
+.ed.u{stroke-dasharray:4 5}
+#lines text{font-family:var(--serif);fill:var(--ink);pointer-events:none;transition:opacity .35s}
+#lines rect{pointer-events:none;transition:opacity .35s}
+
+/* chapters */
+.chap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);padding-block:clamp(52px,7vw,104px);border-top:1px solid var(--rule)}
+.chap:first-of-type{border-top:0}
+.chap .side{position:sticky;top:132px;align-self:start}
+.chap .no{font-size:13px;color:var(--soft);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.chap .no i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.chap h2{font-size:clamp(34px,4.4vw,52px)}
+.chap .when{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--soft);margin-top:12px}
+.chap .body{font-size:17px;max-width:680px}
+.chap .body>p:first-child::first-letter{font-family:var(--serif);float:left;font-size:4.1em;line-height:.82;margin:.08em .1em 0 0;color:var(--c)}
+fig,figure.ph{display:block;margin:34px 0}
+figure.ph{margin:34px 0}
+figure.ph .fr{overflow:hidden;border-radius:4px;background:#ece8e1}
+figure.ph img{display:block;width:100%;height:auto}
+figure.ph figcaption{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--soft);margin-top:10px;line-height:1.4}
+figure.ph figcaption small{font-family:var(--sans);font-style:normal;font-size:12px;color:var(--faint);display:block;margin-top:4px}
+.pair{display:grid;grid-template-columns:var(--cols,repeat(2,minmax(0,1fr)));gap:18px;margin:34px 0;align-items:start}
+figure.ph.tall{max-width:420px}
+.strip figcaption .sw{display:none}
+.pair figure.ph{margin:0}
+.wide{margin-inline:calc(-1 * clamp(0px,4vw,60px))}
+.meanwhile{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0;margin:30px 0}
+.meanwhile b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;color:var(--c)}
+.meanwhile div{font-size:15px;color:var(--soft)}
+.meanwhile div strong{display:block;color:var(--ink);font-weight:600;font-size:15px;margin-bottom:2px}
+.people{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.pp{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px 0 10px;border:1px solid var(--rule);border-radius:999px;background:#fff;cursor:pointer;font-size:14px;transition:border-color .3s,transform .3s}
+.pp:hover{border-color:var(--ink);transform:translateY(-1px)}
+.pp i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+blockquote{margin:30px 0;font-family:var(--serif);font-size:clamp(24px,2.6vw,30px);line-height:1.2;color:var(--ink)}
+blockquote small{display:block;font-family:var(--sans);font-size:13px;color:var(--faint);margin-top:10px}
+
+/* voyages */
+#voyages{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ledger{width:100%;border-collapse:collapse;margin-top:28px;font-size:15px}
+.ledger th{text-align:left;font-weight:500;font-size:12.5px;color:var(--faint);padding:10px 12px;border-bottom:1px solid var(--ink)}
+.ledger td{padding:16px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+.ledger td.y{font-family:var(--serif);font-size:26px;line-height:1;white-space:nowrap;width:1%}
+.ledger td.v{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.15;white-space:nowrap}
+.ledger td.w{color:var(--soft)}
+.ledger tr{transition:background .3s}
+.ledger tbody tr:hover{background:#faf8f4}
+.ledger .who{display:grid;grid-template-columns:8px minmax(0,1fr);gap:0 10px;align-items:start}
+.ledger .dot{width:8px;height:8px;border-radius:50%;margin-top:.55em}
+.ledger .who button{border:0;padding:0;background:none;cursor:pointer;text-align:left;color:var(--soft);font-size:inherit;line-height:inherit;transition:color .3s}
+.ledger .who button:hover{color:var(--ink)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 8px}
+.chip{min-height:40px;padding:0 15px;border:1px solid var(--rule);border-radius:999px;background:#fff;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .3s}
+.chip i{width:8px;height:8px;border-radius:50%}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tl{list-style:none;margin:20px 0 0;padding:0;position:relative}
+.tl li{display:grid;grid-template-columns:96px 22px minmax(0,1fr);gap:0 14px;padding:10px 0;align-items:start}
+.tl .yr{font-family:var(--serif);font-size:26px;line-height:1;text-align:right}
+.tl .dt{width:9px;height:9px;border-radius:50%;justify-self:center;margin-top:10px;background:var(--c)}
+.tl li.w .dt{background:#fff;border:1px solid var(--faint)}
+.tl li.w .tx{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--soft);line-height:1.3}
+.tl .tx{font-size:15.5px;line-height:1.5;padding-top:3px}
+.tl li.w .tx{padding-top:2px}
+.tl .tx button{border:0;background:none;padding:0;cursor:pointer;text-align:left;line-height:inherit;text-decoration:underline;text-decoration-color:#c9c3b9;text-underline-offset:3px}
+.tl .cent{display:block;font-family:var(--serif);font-size:clamp(40px,5vw,64px);color:#d9d4cb;line-height:1;padding:28px 0 6px 0}
+
+/* open questions */
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:18px;margin-top:30px}
+.file{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid var(--rule);border-radius:4px;padding:22px 22px 20px;position:relative;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.file::before{content:"";position:absolute;left:22px;top:-9px;width:74px;height:9px;background:#fff;border:1px solid var(--rule);border-bottom:0;border-radius:4px 4px 0 0}
+.file:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(0,0,0,.35)}
+.file h3{font-size:25px;margin:6px 0 10px}
+.file p{font-size:15px;color:var(--soft);margin:0 0 10px}
+.file .lead{font-size:13.5px;color:var(--ink);margin-bottom:16px}
+.file .pp{margin-top:auto}
+.file .tag{font-size:12.5px;color:var(--faint);display:flex;gap:8px;align-items:center}
+.file .tag i{width:8px;height:8px;border-radius:50%}
+
+footer{padding:56px max(5vw,18px) 70px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--soft)}
+footer .cols{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px}
+footer h4{font:500 13px var(--sans);color:var(--ink);margin:0 0 8px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:0 0 6px}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:rgba(28,27,25,.18);opacity:0;pointer-events:none;transition:opacity .5s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+aside.dr{position:fixed;top:0;right:0;bottom:0;width:min(470px,100vw);background:#fff;z-index:41;transform:translateX(102%);transition:transform .7s cubic-bezier(.2,.75,.15,1);box-shadow:-30px 0 60px -30px rgba(0,0,0,.25);overflow-y:auto;overscroll-behavior:contain}
+aside.dr.on{transform:none}
+.dr .x{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 16px 12px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);z-index:2}
+.dr .x span{font-size:13px;color:var(--soft);display:flex;gap:8px;align-items:center}
+.dr .x span i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.dr .in{padding:6px 28px 40px}
+.dr h3{font-size:38px}
+.dr .dd{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--soft);margin:8px 0 18px}
+.dr figure.ph{margin:4px 0 22px}
+.dr h4{font:500 12.5px var(--sans);color:var(--faint);margin:26px 0 10px}
+.dr .rel{display:flex;flex-wrap:wrap;gap:8px}
+.dr .ev{list-style:none;margin:0;padding:0}
+.dr .ev li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:7px 0;border-bottom:1px solid #f0ede8;font-size:14.5px}
+.dr .ev b{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.1}
+.dr .ev span em{color:var(--faint);font-style:normal;font-size:12.5px;display:block}
+.dr .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.dr .src a{display:block;font-size:14px;margin-bottom:6px}
+.dr .q{font-size:14.5px;color:var(--soft);border-left:0;padding:12px 14px;background:#f7f5f1;border-radius:8px}
+.dr.swap .in{animation:swap .6s cubic-bezier(.2,.7,.2,1)}
+@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+@media(max-width:900px){
+  .chap{grid-template-columns:minmax(0,1fr);gap:18px}
+  .chap .side{position:static}
+  .era{display:none}
+  .navera{display:block}
+  .lp .box{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wide{margin-inline:0}
+}
+@media(max-width:600px){
+  .brand{font-size:19px}
+  .links a{padding:10px 7px;font-size:13.5px}
+  .navera{display:none}
+  .links .lines{padding:7px 13px 7px 12px;font-size:14px;margin-right:0}
+  .links a{display:none}
+  .lines .dots{display:none}
+  .lp{padding:0 10px}
+  .lp .box{grid-template-columns:minmax(0,1fr);padding:14px;gap:10px;border-radius:14px}
+  .lp .grp .sn{font-size:20px;margin:6px 0 8px}
+  .rail{padding:0 8px}
+  .rail .cur{display:none}
+  .pair{grid-template-columns:minmax(0,1fr)}
+  .tl li{grid-template-columns:62px 16px minmax(0,1fr);gap:0 10px}
+  .tl .yr{font-size:21px}
+  .ledger thead{display:none}
+  .ledger tr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+  .ledger td{padding:0;border:0}
+  .ledger td.y{grid-row:span 3}
+  .ledger td.v{white-space:normal}
+  .stage{height:62vh;min-height:380px}
+  .dr .in{padding:6px 20px 40px}
+  .dr .x{padding-left:20px}
+  .spread{height:250px}
+  .spread figure:nth-child(n+4){display:none}
+  .spread figure{padding:5px 5px 20px}
+  .spread figure:nth-child(1){left:0!important;top:14%!important;width:31%!important;height:64%!important}
+  .spread figure:nth-child(2){left:70%!important;top:6%!important;width:29%!important;height:78%!important}
+  .spread figure:nth-child(3){left:29.5%!important;top:18%!important;width:42%!important;height:60%!important}
+  .spread figcaption{font-size:11px;bottom:3px;padding:0 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hero .kick i{display:none}
+  figure.ph.tall{max-width:none}
+  .strip .fr{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .strip img{width:auto!important;max-width:none;height:var(--sh,200px)!important}
+  .strip figcaption .sw{display:block;font-family:var(--sans);font-style:normal;font-size:12px;color:var(--faint);margin-bottom:4px}
+  .tl .dt{margin-top:8px}
+  .tl .tx{padding-top:1px}
+  .ledger .who{margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .dev img{filter:sepia(.18);opacity:1;transform:none}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" id="nav"><div class="in">
+  <a class="brand" href="#top">Angus's family</a>
+  <div class="links" id="links">
+    <button class="lines" id="linesBtn" aria-expanded="false" aria-controls="lp"><span class="dots"><b style="background:var(--b)"></b><b style="background:var(--f)"></b><b style="background:var(--h)"></b><b style="background:var(--y)"></b></span>Family lines<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><a href="#tree">Tree</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a>
+  </div>
+  <div class="navera" id="navera"></div>
+</div>
+<div class="rail" id="rail"><div class="rw"><span class="cur" id="railCur"><i></i><span></span></span><div class="tr" id="railTr"></div></div></div>
+<div class="pgw"><div class="pg" id="railPg" style="position:absolute;inset:0;transform:scaleX(0);transform-origin:left"></div></div>
+<div class="lp" id="lp" role="dialog" aria-label="Family lines"><div class="box" id="lpBox"></div></div>
+</nav>
+<div class="lscrim" id="lscrim"></div>
+
+<div class="era" id="era"><span class="lb">reading in</span><span class="line"></span><span class="yr" id="eraY">2026</span></div>
+
+<header class="hero" id="top" data-era="2026">
+  <div class="kick rv"><i></i>A family history · Broesder, Frankish and Hazenberg<i></i></div>
+  <h1 class="rv">Where Angus<br><em>comes from</em></h1>
+  <p class="sub rv">Bakers from Groningen, a cattleman from the Frisian lakes, a Lincolnshire name kept for twelve generations, goldfields families, Yarra timber millers and a childhood in New Guinea. Every record found so far, gathered in one place.</p>
+  <div class="spread" id="spread"></div>
+  <div class="stats rv" id="stats"></div>
+  <a class="begin rv" href="#tree">Begin with the tree <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1v11M2 7l5 5 5-5"/></svg></a>
+</header>
+
+<section class="band" id="tree" data-era="2026">
+  <div class="wrap">
+    <div class="thead">
+      <div>
+        <div class="kick"><i></i>The tree</div>
+        <h2>Uncover a generation at a time</h2>
+        <p>Angus is at the root. Tap the small circle above anyone to reveal their parents, or tap a person to read about them. Dashed lines are links that are likely but not yet proven.</p>
+      </div>
+      <div class="tools">
+        <div class="search"><input id="q" type="search" placeholder="Find a person" autocomplete="off" aria-label="Find a person"><div class="res" id="res"></div></div>
+        <button class="tbtn" id="zin" aria-label="Zoom in">+</button>
+        <button class="tbtn" id="zout" aria-label="Zoom out">−</button>
+        <button class="tbtn" id="fit">Fit</button>
+        <button class="tbtn" id="all">Uncover all</button>
+        <button class="tbtn" id="reset">Reset</button>
+      </div>
+    </div>
+    <div class="stage" id="stage"><svg id="svg" aria-label="Interactive family tree"><g id="world"><g id="edges"></g><g id="nodes"></g><g id="lines"></g></g></svg><div class="hint">Drag to move · pinch, Ctrl + scroll or − to zoom out</div><button class="tgo" id="tgo" type="button"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>Tap to move around the tree</button><button class="tdone" id="tdone" type="button">Done</button><div class="mini" id="mini" title="Overview: click or drag to move around"><canvas id="minic"></canvas></div></div>
+    <div class="legend" id="legend"></div>
+  </div>
+</section>
+
+<main class="band" id="chapters" style="padding-top:0">
+<div class="wrap">
+
+<article class="chap" id="groningen" data-era="1755" style="--c:var(--b)">
+  <div class="side rv"><div class="no"><i></i>Chapter one · Rory's father's side</div><h2>Bakers of the Groningen clay</h2><div class="when">1755 – 1948</div></div>
+  <div class="body">
+    <p class="rv">For more than a century the Broesders lived within a few kilometres of each other in the Oldambt, the flat clay farmland of north-east Groningen near the German border. The earliest named ancestors lived before Dutch families had fixed surnames: "Harm Derks" meant simply Harm, son of Derk. In 1780 Harm Derks, a labourer recorded as coming "from Bonda", most likely Bunde across the Dollard in East Frisia, married Anna Hindriks of Nieuw-Scheemda at Midwolda. Anna's father, Hindrik Jans Slik, had died when she was small, and she grew up with her mother Lupke Ides and a stepfather, Hindrik Harms.</p>
+    <p class="rv">Their son Hindrik Harms Broesder, born in 1782, is the first known to carry the name. In 1807 he married Eisse Tjaards of Finsterwolde, daughter of the labourer Tjaart Pieters, and their son was named Tjaard: the first of the Tjaards who run through the family to Jerry. In 1811, when the Netherlands was part of Napoleon's empire, fixed surnames became compulsory, and the family has been Broesder ever since.</p>
+    <div class="meanwhile rv"><b>1811</b><div><strong>In the world</strong>Under French rule every Dutch family had to register a fixed surname. Many chose names on the spot.</div></div>
+    <p class="rv">Tjaard was a farmhand when he married a farm maid, Anje Jans Lewe, in 1833. Her grandfather Okke Eijlderts came from the hamlet of Eexta, and the family took Eekstra as its surname. Two generations on, Tjaard Jakob Broesder was a baker in Nieuwolda, where he and Antje Dijk raised at least nine children. By 1922 they had moved south to Zuidlaren and taken over Café "Dennenbosch", which locals called Café Broesder. They held it through the German occupation. Antje died in 1941 and Tjaard in 1948; the building still trades today as Bruin Café de Vliegh.</p>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="888" height="666" decoding="async" src="img/midwolda.jpg" alt="The church at Midwolda"></div><figcaption>The church at Midwolda, where Hindrik Harms Broesder was baptised in 1782.<small>Hardscarf, CC BY-SA 3.0, via Wikimedia Commons.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="858" height="686" decoding="async" src="img/zuidlaren-stationsweg.jpg" alt="Stationsweg, Zuidlaren, in 1972"></div><figcaption>Stationsweg, Zuidlaren, in 1972; the family café stood at number 68.<small>Loek Tangel, Rijksdienst voor het Cultureel Erfgoed, CC BY-SA 4.0.</small></figcaption></figure>
+    </div>
+    <figure class="ph dev wide"><div class="fr"><img width="840" height="840" decoding="async" src="img/groningen.jpg" alt="The Grote Markt in Groningen with the Martini tower, about 1900"></div><figcaption>The Grote Markt and Martini tower in Groningen city, about 1900, in the years the Broesders were baking bread in Nieuwolda.<small>Glass lantern slide, Unger &amp; Hoffmann. Wikimedia Commons, public domain.</small></figcaption></figure>
+    <p class="rv">The records also show how close the border was. Epke Hulzebos, who married Jakob Broesder in 1866, was the granddaughter of Jan Joosten Hulzebos, a tailor born at Wymeer in East Frisia, Germany, who married at Oudeschans, just across the border, in 1800. His is one of four lines that carry Angus's roots beyond the Netherlands and Britain. The others run through a seaman from Kassel and a ship's mate from Denmark on Carla's side, and a woman from Oldenburg on the Hazenberg side.</p>
+    <div class="people rv" data-people="harm anna hindrik eisse tjaardh anje jakob epke janjh tjaardj antje"></div>
+  </div>
+</article>
+
+<article class="chap" id="dordrecht" data-era="1932" style="--c:var(--b)">
+  <div class="side rv"><div class="no"><i></i>Chapter two</div><h2>A Dordrecht childhood</h2><div class="when">1902 – 1952</div></div>
+  <div class="body">
+    <p class="rv">Jakob Tjaart Broesder, born in Nieuwolda in 1902, broke the pattern and went west to the river country around Dordrecht. There he married Grietje Cornelia de Bruijn, born in 1908 at Schelluinen near Gorinchem, where her father Leendert de Bruijn kept the inn. Leendert came from Hoornaar, a few kilometres north, where his father Willem had died at 37, leaving a widow and a young family; the de Bruijns had lived there for at least three generations. Grietje's mother, Gijsbertje de Kreij, was a Schelluinen girl, the daughter of Jan Rokus de Kreij and Lijntje Broere. Jakob and Grietje's son Tjaard Jacob, later known as Jerry, was born in Dordrecht on 2 June 1932, the youngest of three.</p>
+    <figure class="ph dev"><div class="fr"><img width="1266" height="952" decoding="async" src="img/dordrecht.jpg" alt="Aerial view over Dordrecht in 1930"></div><figcaption>Dordrecht in 1930, two years before Jerry was born there.<small>Rijksdienst voor het Cultureel Erfgoed, CC BY-SA 4.0, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="ph dev"><div class="fr"><img width="1400" height="327" decoding="async" src="img/dordrecht-family-card-1932.jpg" alt="The Broesder family card from the Dordrecht population register"></div><figcaption>The family card from the Dordrecht population register. Line five is Tjaart Jacob, born 2 June 1932.<small>Regionaal Archief Dordrecht, via Open Archives.</small></figcaption></figure>
+    <p class="rv">Jerry was seven when German forces invaded in May 1940, and Dordrecht itself was fought over for four days. He was twelve during the Hunger Winter of 1944–45, when food ran out in the cities of the west and people walked for days into the countryside to trade for potatoes.</p>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="1359" height="877" decoding="async" src="img/hongerwinter.jpg" alt="Two women pulling a pram loaded with goods during the Hunger Winter"></div><figcaption>A "hunger journey" in search of food, 1944–45.<small>Anefo, Nationaal Archief, CC BY-SA 3.0.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="1288" height="935" decoding="async" src="img/flood1953.jpg" alt="A railway line torn up by flood water near Moerdijk"></div><figcaption>The railway near Moerdijk after the flood of February 1953, a few months after Jerry left.<small>Het Utrechts Archief, CC BY 4.0.</small></figcaption></figure>
+    </div>
+    <div class="people rv" data-people="willembr leendertb janrokus gijsbertje jakobt grietje jerry"></div>
+  </div>
+</article>
+
+<article class="chap" id="crossing" data-era="1952" style="--c:var(--b)">
+  <div class="side rv"><div class="no"><i></i>Chapter three</div><h2>Crossing the world</h2><div class="when">1941 – 1958</div></div>
+  <div class="body">
+    <p class="rv">Jerry sailed at twenty, at the height of post-war Dutch emigration, under the new Netherlands–Australia Migration Agreement. His ship, the Fairsea, had been built as the American escort carrier USS Charger and was later converted to carry emigrants. He reached Sydney on 10 October 1952.</p>
+    <figure class="ph dev wide"><div class="fr"><img width="686" height="436" decoding="async" src="img/fairsea.jpg" alt="The emigrant ship Fairsea at sea"></div><figcaption>The Fairsea, the ship that brought Jerry to Australia.<small>State Library of Queensland, public domain.</small></figcaption></figure>
+    <p class="rv">Carla Degenhart's journey began with a loss. Her father, Hendricus, was a ship's engineer who kept sailing for the Allies after the invasion. On 24 November 1941 his steamer, the SS Groenlo, was sunk by German torpedo boats in a North Sea convoy. He was 37; Carla was six. Her mother raised two children in occupied Amsterdam.</p>
+    <blockquote class="rv">Carla flew rather than sailed, landing in Sydney on 4 November 1958 on a Dutch-registered aircraft, PH-LKW.<small>From her migration file, National Archives of Australia</small></blockquote>
+    <p class="rv">Behind her stand diamond polishers in Amsterdam, a furniture maker from Kampen, shoemakers from Tilburg and a seaman from Kassel in Germany. Jerry and Carla married in Australia and raised Diana, Greg, Monique, Robert and Yolanda in Adelaide's southern suburbs.</p>
+    <figure class="ph dev"><div class="fr"><img width="510" height="675" decoding="async" src="img/fairsea-quay.jpg" alt="Emigrants boarding the Fairsea at Columbus Quay, Bremerhaven"></div><figcaption>Emigrants boarding the Fairsea at Bremerhaven in 1953, the year after Jerry's voyage.<small>Australian National Maritime Museum, no known copyright restrictions.</small></figcaption></figure>
+    <div class="people rv" data-people="jerry carla hendricus mariavdb johannesc greg"></div>
+  </div>
+</article>
+
+<article class="chap" id="frankish" data-era="1657" style="--c:var(--f)">
+  <div class="side rv"><div class="no"><i></i>Chapter four · Rory's mother's side</div><h2>From the Humber to the goldfields</h2><div class="when">1657 – 1964</div></div>
+  <div class="body">
+    <p class="rv">In 1657 Virgil Frankish married Mary Pinder at Caistor in north Lincolnshire. For the next two centuries the unusual name Virgil passed from father to son through the villages on the south bank of the Humber: Caistor, Frodingham, Hibaldstow, Elsham and Barrow upon Humber. Virgil Frankish married Mary Ellis at Frodingham in 1752, and their son Virgil, baptised at Hibaldstow in 1757, married Ann Hickson at Elsham thirty years later.</p>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="980" height="1226" decoding="async" src="img/hibaldstow.jpg" alt="The church tower of St Hybald's, Hibaldstow"></div><figcaption>St Hybald's, Hibaldstow, where Virgil Frankish was baptised in 1757.<small>Asterion, CC BY 2.5, via Wikimedia Commons.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="658" height="459" decoding="async" src="img/caistor.jpg" alt="The market place at Caistor, Lincolnshire"></div><figcaption>The market place at Caistor today, where the Virgils married in 1657, 1668 and 1705.<small>David Wright, CC BY-SA 2.0, via Wikimedia Commons.</small></figcaption></figure>
+    </div>
+    <p class="rv">Their grandson Virgil Robert Frankish, baptised at Barrow upon Humber in 1832, crossed the Humber to the port of Hull, where he married Jane Batler in 1854. His son Thomas was born in Hull about 1863 and married a Yorkshire girl, Emily Wetherall, there in 1889. Their sons Jesse, Robert and Richard were born in Hull between 1890 and 1895; each of them carried their mother's surname, Wetherall, as a middle name.</p>
+    <p class="rv">Then they went out to Western Australia. The family tell that the WA Government Railways were bringing skilled steam engine drivers out from England. In April 1897 "Mrs Frankish and three children" landed at Albany from the mail steamer Orizaba, and by 1901 Thomas was a railwayman at Northam, the railhead for the goldfields. In July 1902, when Northam's railway men celebrated winning the eight-hour day, he answered the toast: what the men wanted, he said, was not 48 hours crammed into a few days but a true day of eight hours. Emily sat on the ladies' committee of the Railway Institute, and Walter was born at Northam in 1904. In March 1908, aged four, Walter ran across Newcastle Street in Perth, dodged one tram and was caught by the front guard of another; he spent days in Perth Hospital, and the accident made the papers.</p>
+    <p class="rv">Thomas died at Kalgoorlie in 1921. Walter married Mona Fisk, a Kalgoorlie girl, in 1931, and their son Lawrie was born in Perth in 1937.</p>
+    <p class="rv">Mona's family had followed gold too. Her mother, Matilda Anthony, was born in 1873 at Sebastopol on the Ballarat goldfield, to Herbert Anthony and Mara James, a couple whose parents carried the Welsh names Jones, Evans and James. They later moved to the gold town of Stawell, where Mara died in 1893 and Herbert in 1897. Matilda went west to Kalgoorlie and married Edward Charles Fisk there in 1906; Mona was born the next year.</p>
+    <p class="rv">Grandpa Fisk is remembered as a character. About 1910 the family moved to Perth, where he worked at Foy's and then travelled for Beale's, the piano firm. In August 1918 Matilda divorced him, and the Daily News, the Kalgoorlie Miner and Truth all carried the case; in those days divorce was not done, and the family did not appreciate the publicity. Afterwards the papers follow an E. C. Fisk through the mining fields, pegging gold leases at Meekatharra in 1922 and in 1932 running the London Mining Options and Investment Company, with options over leases at Comet Vale and Mount Jackson. The family remember him always dealing with the Mines Department, always advertising for a partner with £100 for a new venture, and seeing the future in mineral sands long before the industry arrived. With the money to start, they say, he would have made a fortune.</p>
+    <figure class="ph dev wide"><div class="fr"><img width="628" height="476" decoding="async" src="img/kalgoorlie-hannan-street-1901.jpg" alt="Hannan Street, Kalgoorlie, crowded with horse-drawn carts"></div><figcaption>Hannan Street, Kalgoorlie, in 1901.<small>Wikimedia Commons, public domain.</small></figcaption></figure>
+    <div class="meanwhile rv"><b>1943</b><div><strong>A cousin in the RAAF</strong>Lawrie's first cousin, Flight Sergeant Robert Frankish, was killed on 18 September 1943 and buried at Harrogate in Yorkshire, the county the Frankish name came from.</div></div>
+    <p class="rv">Lawrie went east first. In January 1951, from Perth Boys' School, he was one of seven Western Australian boys chosen to enter the Royal Australian Naval College at Flinders Naval Depot as a cadet midshipman. Home on his first leave that May, aged 14, he called on the Governor with three other cadets, and Sir James Mitchell, a farmer himself, joked that they should have become dairy farmers. Walter and Mona followed to Melbourne in 1952 or 1953 with Ted, Walter and Ramona.</p>
+    <figure class="ph dev"><div class="fr"><img width="900" height="822" decoding="async" src="img/lawrie-cadets-1951.jpg" alt="Four cadet midshipmen with the Governor of Western Australia, 1951"></div><figcaption>Cadet midshipmen home on leave call on the Governor, Sir James Mitchell, May 1951. Left to right: Kevin Bale, Lawrie Frankish, Edward Brownfield and Neville Hawtin.<small>The West Australian, 24 May 1951, via Trove.</small></figcaption></figure>
+    <p class="rv">Lawrie married Phyllis Parkinson at Gladysdale in 1958, and they began on a small dairy farm there that they called Marston Park. In 1962 they sold it and moved to a much bigger dairy at Murrabit, towards Gonn Crossing on the Murray River plains north of Kerang, milking up to about 100 cows. Merrilee grew up there. In January 1974 they bought a 3,000-acre grazing property at Tara on Queensland's Western Downs, which they called Marston, and they ran the tyre service in town. Their last farm, at Mareeba, was Marston Farm.</p>
+    <p class="rv">The name Marston carries the family's own account of where they came from. Phyllis tells it this way: the Frankishes were Huguenots, Protestants from near Flanders who left Catholic France for England more than 300 years ago, and the name Frankish marks them as people from over there. Later, she says, the family farmed on Marston Moor in Yorkshire, scene of the great Civil War battle of 1644, where ploughing turned up bones and skulls, and they lost that farm in a foot-and-mouth epidemic, when no compensation was paid. The records fit the setting. The earliest Frankish entries found are at Caistor in Lincolnshire from 1657, close to the Isle of Axholme, where some 80 Huguenot families from Walloon Flanders settled at Sandtoft in 1628 to drain Hatfield Chase. Marston Moor lies a few miles from Tadcaster and Bramham, the home parishes of Emily Wetherall, Walter's mother, whose surname became Lawrie's middle name.</p>
+    <div class="people rv" data-people="virgil1668 virgil1 thomas1 virgilr thomas2 walter herbert matilda edwardf mona lawrie romona raaf"></div>
+  </div>
+</article>
+
+<article class="chap" id="yarra" data-era="1848" style="--c:var(--p)">
+  <div class="side rv"><div class="no"><i></i>Chapter five</div><h2>A doctor, a brooch and the Upper Yarra</h2><div class="when">1770 – 1961</div></div>
+  <div class="body">
+    <p class="rv">Phyllis's side reached Australia early, on four ships between 1848 and 1857. The most colourful arrival was Dr Charles Houlton Webb, a London surgeon who sailed to Adelaide as ship's doctor on the Hooghly in 1848, leaving his wife behind. A fellow passenger called him disagreeable. Within six months he had married again. He became the first doctor of Clare, ran its inn, and was mayor when he died in 1870. His own father, the Reverend Richard Webb, had been a Minor Canon of St George's Chapel at Windsor Castle.</p>
+    <figure class="ph dev"><div class="fr"><img width="590" height="911" decoding="async" src="img/mabel-ann-webb-18.jpg" alt="Mabel Ann Webb aged 18"></div><figcaption>Mabel Ann Webb, the doctor's granddaughter, at eighteen. Her brother, a Prahran jeweller, made her a crescent-moon brooch that Phyllis still keeps.<small>From Webb of Intrigue, by Norman Ernest Smith.</small></figcaption></figure>
+    <p class="rv">Mabel married Ern Smith, a Prahran painter and paperhanger, against her family's wishes. Around 1911 they moved to Hoddles Creek in the hills east of Melbourne. Their daughter Alma married Ben Parkinson there in 1935, and her sister Elsie married Ben's brother Don. The two couples lived side by side at Gladysdale, and the brothers worked in the timber mills all their lives. Their mother, Martha Wilson, came from Diamond Creek, where her father Joseph had settled; her mother's family, the Whatmoughs, were from Rochdale in Lancashire.</p>
+    <p class="rv">Their father, William George Parkinson, was Grandpa Parky, and the family remember him as notorious rather than notable. Born at Greendale about 1879, he enlisted in Melbourne in July 1915, aged 36, a married labourer, and sailed that October with reinforcements for the 14th Battalion. His service file has him in the camps on Salisbury Plain from 1916, in and out of hospital. On 26 July 1917 he walked out of camp at Codford and stayed away for two years. A court martial at Sutton Veny in September 1919 found him guilty of absence without leave, and he was discharged at home that December. Martha had moved with the boys to Hoddles Creek in 1917. The family remember that his desertion left her and the children without income, and that he fought in France and was evacuated; perhaps, after France, he could not face going back. He turned up again in the 1930s. Phyllis remembers seeing him on visits to her grandmother, and Ben and Don would barely acknowledge him.</p>
+    <figure class="ph dev"><div class="fr"><img width="1000" height="754" decoding="async" src="img/parkinson-aif-1915.jpg" alt="William George Parkinson's AIF service and casualty form"></div><figcaption>William George Parkinson's service form: enlisted 13 July 1915 at Melbourne, aged 36, born at Greendale, a labourer, embarked 18 October 1915.<small>NAA: B2455, PARKINSON WILLIAM GEORGE.</small></figcaption></figure>
+    <div class="meanwhile rv"><b>1939</b><div><strong>Black Friday</strong>On 13 January 1939 bushfires swept the ranges of Victoria, including the Upper Yarra around Warburton. Phyllis was not yet three.</div></div>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="495" height="882" decoding="async" src="img/parkinson-wedding-1935.jpg" alt="Ben Parkinson and Alma Smith on their wedding day"></div><figcaption>Ben and Alma on their wedding day, 6 April 1935.<small>From Webb of Intrigue.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="751" height="529" decoding="async" src="img/parkinson-sisters-1956.jpg" alt="Pamela, Phyllis and Joan Parkinson"></div><figcaption>Pamela, Phyllis and Joan, about 1956.<small>From Webb of Intrigue.</small></figcaption></figure>
+    </div>
+    <div class="people rv" data-people="revwebb drwebb elliott mabel ern alma wgp martha ben phyllis"></div>
+  </div>
+</article>
+
+<article class="chap" id="hazenberg" data-era="1910" style="--c:var(--h)">
+  <div class="side rv"><div class="no"><i></i>Chapter six · Claire's father's side</div><h2>From the Frisian lakes to Queensland</h2><div class="when">1798 – 2021</div></div>
+  <div class="body">
+    <p class="rv">Claire's Hazenbergs came from Friesland, the watery province of lakes and dairy farms in the far north of the Netherlands. Willem Hendriks Hazenberg was born at Bergum around 1877. His son Taeke was born at Grouw, on the edge of the Frisian lakes, on 5 November 1910, and in 1933 he married Aukje Elzinga from the neighbouring village of Akkrum.</p>
+    <p class="rv">The name itself came from across the provincial border, in the Westerkwartier of Groningen. In 1798 Wiebe Willems of Grootegast married Aafke Gales of Niekerk, and they made their home at Leek. Wiebe died in the spring of 1809, about 33 years old; their youngest son was baptised a few weeks later with the note "the father has died". All five children took the surname Hazenberg when fixed names became law. The eldest, Willem, became a merchant, crossed into Friesland, and in 1839 married Anna Grabhorn from Oldenburg at Smallingerland. Their son Hendrik was Taeke's grandfather.</p>
+    <p class="rv">Taeke and Aukje's son Willem, named after his grandfather in the Frisian way, was born at Irnsum on 25 January 1936. His sisters followed: Aaltje in 1937, named for Aukje's mother, then Tetje and Janna. Willem was four when Germany invaded, and nine when the war ended.</p>
+    <blockquote class="rv">On 4 October 1950 the Hazenbergs reached Sydney on the Johan van Oldenbarnevelt: Taeke, 39, a cattleman; Aukje, 40; Willem, 14; and the girls, 13, 8 and 6.<small>From the ship's passenger list, National Archives of Australia</small></blockquote>
+    <figure class="ph dev wide"><div class="fr"><img width="940" height="627" decoding="async" src="img/johan-van-oldenbarnevelt.jpg" alt="The liner Johan van Oldenbarnevelt"></div><figcaption>The Johan van Oldenbarnevelt in 1948, two years before she carried the Hazenbergs to Australia.<small>Van Oorschot / Anefo, Nationaal Archief, CC0.</small></figcaption></figure>
+    <figure class="ph dev"><div class="fr"><img width="940" height="120" decoding="async" src="img/jvo1950.jpg" alt="The Hazenberg family's entry on the 1950 passenger list"></div><figcaption>The family's lines on the passenger list: Taeke ("Feake"), Willem ("Willum"), Aukje, Aaltje, Tetje and Janna.<small>NAA: K269, 4 OCT 1950 JOHAN VAN OLDENBARNEVELT.</small></figcaption></figure>
+    <p class="rv">The family settled at Springfield Road, Bundaberg. On the last day of 1957 the Bundaberg News-Mail announced the engagement of Willem, now Bill, to Nancy Joan Hodgetts, known as Meg, second daughter of Mr and Mrs E. Hodgetts of 60 Perry Street, from a big Bundaberg-district family of eight children. Taeke, Aukje and their daughter Ietje became Australians together at the Rowers Hall in January 1959. Bill worked the cane: he was a driver on Fairymead Plantation when he was naturalised in June 1961, and in 1964 he drove the Bundaberg-built Scott Harvestall harvester in trials near Mackay, where it cut a patch of tangled, flattened cane that onlookers had called impossible.</p>
+    <p class="rv">Bill and Meg had Joanne, Gail and Trevor. Meg later married Kevin Wills and lived at Gin Gin, where the family remember her running a corner grocery store; she died in Bundaberg in 2021.</p>
+    <p class="rv">Taeke died in Bundaberg in 1987 and was buried in the lawn section of the city's General Cemetery. Aukje spent her last years at Fennell Bay on Lake Macquarie in New South Wales; when she died in 1994 she was brought back to Bundaberg and buried in the same grave.</p>
+    <p class="rv">Meg's parents, Everard Hodgetts and Amy Louisa Haken, married in 1934 and raised their family around Bundaberg and Gin Gin. Everard's mother, Rosetta Maud Bastock, was a Birmingham girl, born at Aston in 1878, who came out to marry Joseph Hodgetts. They farmed at Rosedale, then ran the strawberry gardens at Newtown in Bundaberg, a favourite spot for parties and outings, and raised seven sons and six daughters. When Rosetta turned 80 in 1958 her family filled the Coronation Hall; she had 44 grandchildren and 19 great-grandchildren. Amy's parents were Gordon Haken and Mary May Tudman, from two families settled in Queensland for a generation: John Tudman and Emma Pearson married in Brisbane in 1869, and George Haken and Grace Redman in 1877. Everard and Amy lie together in the Bundaberg General Cemetery.</p>
+    <figure class="ph dev"><div class="fr"><img width="1000" height="587" decoding="async" src="img/gingin1906.jpg" alt="Gin Gin looking west, about 1906"></div><figcaption>Gin Gin, looking west, about 1906, the year Everard Hodgetts was born. He was still living there when he died in 1994.<small>Postcard by G. C. Wilson, Gin Gin. State Library of Queensland, public domain.</small></figcaption></figure>
+    <figure class="ph dev"><div class="fr"><img width="616" height="477" decoding="async" src="img/queenst1952.jpg" alt="A mother and two children in raincoats crossing Queen Street, Brisbane, in 1952"></div><figcaption>Queen Street, Brisbane, on a rainy day in 1952, the year Bill's immigration file was opened in the city.<small>State Library of Queensland, public domain.</small></figcaption></figure>
+    <div class="meanwhile rv"><b>1950</b><div><strong>In the world</strong>Dutch emigration to Australia was gathering pace. The Netherlands–Australia Migration Agreement was signed the following year, and between 1947 and 1971 about 160,000 Dutch people emigrated to Australia.</div></div>
+    <p class="rv">The family also keeps a chart of another branch of the name: the Hazenbergs of Groningen, brick manufacturers, among them Aldert Hazenberg, an Officer of the Order of Orange-Nassau. Bill's own records lead to Friesland instead, and no link between the two branches has been found.</p>
+    <figure class="ph dev"><div class="fr"><img width="1116" height="726" decoding="async" src="img/hazenberg-family-chart.jpg" alt="A Hazenberg family chart with photographs"></div><figcaption>The Groningen Hazenberg chart kept by the family.<small>Family collection.</small></figcaption></figure>
+    <div class="people rv" data-people="wiebe aafke willemw willemh taeke aukje bill meg everard amyh trevor"></div>
+  </div>
+</article>
+
+<article class="chap" id="guinea" data-era="1934" style="--c:var(--y)">
+  <div class="side rv"><div class="no"><i></i>Chapter seven · Claire's mother's side</div><h2>A childhood in New Guinea</h2><div class="when">1900 – 1957</div></div>
+  <div class="body">
+    <p class="rv">Beverly's grandparents were English migrants. George Herbert Brazier was born in the Wilton district of Wiltshire in 1860, and Ellen Baldwin at Bosmere in Suffolk in 1864; they married in Brisbane in 1893. On her mother's side, Frank Warbrick had come out from Oldham in Lancashire as a small child; his mother's death in 1874 is in Queensland's register of deaths at sea.</p>
+    <p class="rv">Bruce Wilton Brazier, named after his father's home district, was born at Toowoomba on 14 February 1900 and went to Brisbane Grammar School. He enlisted at the very end of the First World War, and in September 1927 was appointed a clerk in the New Guinea service, a job he held for nearly thirty years. He married Aileen Warbrick at Scots Church, Clayfield, on 27 November 1929. She wore white and silver with a veil of Honiton lace, the reception was at Ryecroft, her mother's house in Bayview Terrace, and they honeymooned at Tweed Heads. On 19 May 1930, after a round of farewell teas, she left to join him.</p>
+    <p class="rv">Their daughters Margaret and Beverly were born in 1932 and 1933. The Pacific Islands Monthly staff lists track his postings: Rabaul to Kieta on Bougainville in November 1935, a promotion in January 1936, and Rabaul to Kavieng in May 1938. Over the years the family lived at Rabaul, Kokopo, Kieta, Kavieng and Wau; in June 1940 Aileen and "her two little girls" came down from Kavieng, New Ireland, to stay in Clayfield.</p>
+    <figure class="ph dev"><div class="fr"><img width="824" height="521" decoding="async" src="img/toowoomba-station.jpg" alt="The railway station at Toowoomba, about 1900"></div><figcaption>The railway station at Toowoomba around 1900, the town where Bruce Brazier was born.<small>State Library of Queensland, no known restrictions.</small></figcaption></figure>
+    <figure class="ph dev"><div class="fr"><img width="1568" height="452" decoding="async" src="img/montoro1934.jpg" alt="The Brazier family on the Montoro passenger list, 1934"></div><figcaption>The Montoro, arriving at Brisbane from Rabaul on 2 September 1934: Mr B. Brazier, 34, civil servant; Mrs A., 31; Miss M., 2; and Miss B., 1. Beverly is on line 6.<small>NAA: A907, 1934/9/68.</small></figcaption></figure>
+    <div class="meanwhile rv"><b>1937</b><div><strong>Rabaul erupts</strong>In May 1937 two volcanoes erupted beside Rabaul, where Bruce had been based, burying the town in ash. The Territory's capital later moved to Lae.</div></div>
+    <figure class="ph dev"><div class="fr"><img width="1343" height="883" decoding="async" src="img/rabaul1937.jpg" alt="Ash falling over Rabaul during a volcanic eruption"></div><figcaption>Ash raining down on Rabaul during an eruption.<small>KITLV, CC BY 4.0, via Wikimedia Commons.</small></figcaption></figure>
+    <p class="rv">On 12 December 1941, days after Pearl Harbor, the War Cabinet ordered every European woman and child out of Papua and New Guinea. Burns Philp ships such as the Macdhui, Neptuna and Malaita carried them south, often with a few hours' notice. Beverly was eight. In April 1942 Pacific Islands Monthly printed the full list of evacuees and their Australian addresses; the family appear as Mrs A. Brazier and three children, care of Aileen's mother in Doncaster Street, Hendra. By then Rabaul had fallen to Japan, and by 1943 the family's home was 51 Balfour Road, Rose Bay, in Sydney.</p>
+    <figure class="ph dev wide"><div class="fr"><img width="1372" height="869" decoding="async" src="img/macdhui.jpg" alt="The Burns Philp ship Macdhui"></div><figcaption>The Macdhui, one of the Burns Philp ships that carried women and children south in December 1941.<small>State Library of Queensland, public domain.</small></figcaption></figure>
+    <p class="rv">Bruce enlisted again in Sydney on 22 November 1943, aged 43. He was posted to ANGAU, the Australian New Guinea Administrative Unit, which ran the territory behind the fighting, and served 517 days in New Guinea as a Warrant Officer. In January 1945 Pacific Islands Monthly, which knew him as Bill, reported "Bill Brazier (Rabaul and Wau)" among the old New Guinea hands serving near Finschhafen. He was discharged in April 1946, with three children under sixteen at home.</p>
+    <figure class="ph dev"><div class="fr"><img width="1036" height="1166" decoding="async" src="img/brazier-attestation-1943.jpg" alt="Bruce Wilton Brazier's 1943 attestation form"></div><figcaption>Bruce's attestation form, Waverley Park, Sydney, 22 November 1943.<small>NAA: B884, N465736.</small></figcaption></figure>
+    <figure class="ph dev"><div class="fr"><img width="560" height="721" decoding="async" src="img/brazier-bulolo-1948.jpg" alt="Bruce Brazier in 1948, photographed as he sailed for Port Moresby"></div><figcaption>"Mr. B. W. Brazier, of Treasury Department, Port Moresby, returning after leave in Australia." Sailing on the Bulolo, August 1948. The boy beside him is not named.<small>Pacific Islands Monthly, 1 September 1948, via Trove.</small></figcaption></figure>
+    <p class="rv">After the war the family went back to New Guinea, and Bruce to the Treasury at Port Moresby. In August 1948 he sailed north after leave on the Bulolo, another Burns Philp ship, and in June 1949 he flew to Daru on Treasury business on one of Qantas's new Catalina routes. On 2 January 1951 Bruce and Aileen, with Beverly, 17, Margaret and young Bruce, landed at Brisbane from the Bulolo. Margaret made her debut at the Michaelmas Ball in Port Moresby that November. Bruce became a Paying Officer for the Territory in 1953 and a Receiver of Public Moneys in 1957, still at Port Moresby.</p>
+    <p class="rv">On 1 November 1951 the Courier-Mail announced Beverly's engagement to Doug Hymus, “younger son of Mr and Mrs F. E. Hymus, Charters Towers”. Doug was born at Cooroy in 1927 and had joined the RAAF at 18 in the last months of the war; by early 1956 they were living in Cairns with two children. That February Aileen, visiting her mother at Hendra, told the Telegraph that Port Moresby, with four or five frock shops and a beauty salon, was now a nice place to live; young Bruce, 14, was boarding at Churchie. Beverly and Doug's daughter Sue married Trevor Hazenberg.</p>
+    <p class="rv">The family also remember time on Nauru, another Australian-administered territory; the Territory gazettes place Bruce at Port Moresby until at least mid-1957, so any Nauru years came after that.</p>
+    <p class="rv">The Hymus family had come out from England: Edward Charles Hymus, born in 1869 near Linton in Cambridgeshire, and Frances Horsford, born the same year in Dorset. They married in Queensland in 1895 and lie together in Toowong Cemetery.</p>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="650" height="380" decoding="async" src="img/hanuabada.jpg" alt="The stilt village of Hanuabada at Port Moresby"></div><figcaption>Hanuabada, the stilt village on the harbour at Port Moresby, on an early lantern slide.<small>Callaway Special Collections, public domain.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="552" height="430" decoding="async" src="img/nauru.jpg" alt="The phosphate works on Nauru"></div><figcaption>The phosphate works on Nauru.<small>Callaway Special Collections, public domain.</small></figcaption></figure>
+    </div>
+    <figure class="ph dev wide"><div class="fr"><img width="1000" height="538" decoding="async" src="img/debutantes-1951.jpg" alt="Five Port Moresby debutantes and their partners, 1951"></div><figcaption>The five debutantes of the Michaelmas Ball, Port Moresby, 1951, with their partners: Ann Frith, Margaret Brazier, Margaret Gracie, Peg Smith and Patrice Drewe.<small>Pacific Islands Monthly, 1 November 1951 (Papuan Prints), via Trove.</small></figcaption></figure>
+    <div class="people rv" data-people="george bruce aileen beverly margaret brucew doug sue"></div>
+  </div>
+</article>
+
+<article class="chap" id="together" data-era="2026" style="--c:var(--ink)">
+  <div class="side rv"><div class="no"><i></i>Chapter eight</div><h2>Where the roads meet</h2><div class="when">Mount Isa to Mareeba</div></div>
+  <div class="body">
+    <p class="rv">One line crossed the world in a single voyage; the other moved across Australia over three generations, from the goldfields to Melbourne, the Murray, the Western Downs and the Tableland. The two lines came together in the mining town of Mount Isa, where Greg Broesder met Merrilee Frankish. They moved to Cairns, where Rory was born, and then to Mareeba, where he grew up and where Lawrie and Phyllis live today.</p>
+    <div class="pair">
+      <figure class="ph dev"><div class="fr"><img width="1302" height="924" decoding="async" src="img/mountisa1954.jpg" alt="The mine works at Mount Isa in 1954"></div><figcaption>The mines at Mount Isa in 1954.<small>State Library of Queensland, public domain.</small></figcaption></figure>
+      <figure class="ph dev"><div class="fr"><img width="692" height="407" decoding="async" src="img/mareeba.jpg" alt="Three women inspecting a tobacco crop at Mareeba"></div><figcaption>Inspecting the tobacco crop at Mareeba, about 1938.<small>State Library of Queensland, no known restrictions.</small></figcaption></figure>
+    </div>
+    <p class="rv">Rory married Claire Hazenberg, whose families had come by different roads again: a Frisian family who sailed in 1950, and a girl who grew up in New Guinea. Their son Angus is where all of them meet.</p>
+    <div class="people rv" data-people="greg merrilee rory claire angus"></div>
+  </div>
+</article>
+</div>
+</main>
+
+<section class="band" id="voyages" data-era="1952">
+  <div class="wrap">
+    <div class="kick"><i></i>Arrivals</div>
+    <h2 style="font-size:clamp(36px,4.6vw,52px)">The voyages that brought them</h2>
+    <table class="ledger" id="ledger"><thead><tr><th>Year</th><th>Vessel</th><th>Route</th><th>Who</th></tr></thead><tbody></tbody></table>
+  </div>
+</section>
+
+<section class="band" id="timeline" data-era="1900">
+  <div class="wrap">
+    <div class="kick"><i></i>Timeline</div>
+    <h2 style="font-size:clamp(36px,4.6vw,52px)">Family and world, side by side</h2>
+    <div class="filters" id="filters"></div>
+    <ul class="tl" id="tl"></ul>
+  </div>
+</section>
+
+<section class="band" id="unknown" data-era="2026" style="background:var(--paper);border-top:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="kick"><i></i>Still to find</div>
+    <h2 style="font-size:clamp(36px,4.6vw,52px)">The files not yet opened</h2>
+    <div class="files" id="files"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="cols">
+    <div><h4>About</h4><p>Compiled in 2026 for Angus from civil, parish, migration and newspaper records, the family chart kept by the Hazenbergs, and <em>Webb of Intrigue</em> by Norman Ernest Smith (2008). Where a link is likely but not proven, it is marked.</p></div>
+    <div><h4>Records</h4><ul><li><a href="https://www.openarchieven.nl/">Open Archives (Netherlands)</a></li><li><a href="https://www.freereg.org.uk/">FreeREG parish registers</a></li><li><a href="https://recordsearch.naa.gov.au/">National Archives of Australia</a></li><li><a href="https://www.ryersonindex.org/">Ryerson Index</a></li><li><a href="https://anzacportal.dva.gov.au/node/841">DVA: the 1941 evacuation</a></li></ul></div>
+    <div><h4>Photographs</h4><p>Historical photographs from Wikimedia Commons, State Library of Queensland, Nationaal Archief, KITLV, Het Utrechts Archief, the Australian National Maritime Museum and Rijksdienst voor het Cultureel Erfgoed, under the licences given in each caption. Family photographs from the family's own collections.</p></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="dr" id="dr" aria-hidden="true"><div class="x"><span id="drside"></span><button class="tbtn" id="drx" aria-label="Close">Close</button></div><div class="in" id="drin"></div></aside>
+
+<script src="people.js"></script>
+<script>
+{
+const P = window.PEOPLE, WORLD = window.WORLD;
+const DIMS = {"img/lawrie-cadets-1951.jpg": [900, 822], "img/parkinson-aif-1915.jpg": [1000, 754], "img/brazier-bulolo-1948.jpg": [560, 721], "img/debutantes-1951.jpg": [1000, 538], "img/gingin1906.jpg": [1000, 587], "img/hanuabada.jpg": [650, 380], "img/queenst1952.jpg": [616, 477], "img/fairsea-quay.jpg": [510, 675], "img/groningen.jpg": [840, 840], "img/zuidlaren-stationsweg.jpg": [858, 686], "img/kalgoorlie-hannan-street-1901.jpg": [628, 476], "img/hibaldstow.jpg": [980, 1226], "img/nauru.jpg": [552, 430], "img/macdhui.jpg": [1372, 869], "img/midwolda.jpg": [888, 666], "img/bulolo.jpg": [644, 463], "img/fairsea.jpg": [686, 436], "img/mabel-ann-webb-18.jpg": [590, 911], "img/hongerwinter.jpg": [1359, 877], "img/parkinson-sisters-1956.jpg": [751, 529], "img/dordrecht-family-card-1932.jpg": [1400, 327], "img/jvo1950.jpg": [940, 120], "img/mareeba.jpg": [692, 407], "img/johan-van-oldenbarnevelt.jpg": [940, 627], "img/flood1953.jpg": [1288, 935], "img/parkinson-wedding-1935.jpg": [495, 882], "img/bonegilla.jpg": [644, 471], "img/caistor.jpg": [658, 459], "img/montoro1934.jpg": [1568, 452], "img/hazenberg-family-chart.jpg": [1116, 726], "img/brazier-attestation-1943.jpg": [1036, 1166], "img/mountisa1954.jpg": [1302, 924], "img/dordrecht.jpg": [1266, 952], "img/toowoomba-station.jpg": [824, 521], "img/rabaul1937.jpg": [1343, 883]};
+const imgTag = (src, alt, extra) => { const d = DIMS[src] || [4, 3]; return `<img src="${src}" alt="${alt || ''}" width="${d[0]}" height="${d[1]}" decoding="async"${extra || ''}>`; };
+/* fetch every photograph up front so nothing shifts or pops in while scrolling */
+const preload = () => Object.keys(DIMS).forEach(src => { const i = new Image(); i.decoding = 'async'; i.src = src; });
+if (document.readyState === 'complete') preload(); else addEventListener('load', preload);
+let ROOT = window.ROOT;
+const $ = s => document.querySelector(s);
+const SIDE = {b:['Broesder','var(--b)',"Rory's father's side"],f:['Frankish','var(--f)',"Rory's mother's side"],p:['Parkinson, Smith and Webb','var(--p)',"Rory's mother's side"],h:['Hazenberg','var(--h)',"Claire's father's side"],y:['Hymus and Brazier','var(--y)',"Claire's mother's side"],r:['Rory and Claire','var(--r)','Parents'],a:['Angus','var(--a)','Angus']};
+const RAW = {b:'#2f5b9a',f:'#a8741c',p:'#4b7a52',h:'#a4442e',y:'#23797f',r:'#55514b',a:'#1c1b19'};
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
+const short = p => p.sn || p.n;
+
+/* children index */
+const KIDS = {};
+Object.entries(P).forEach(([id, p]) => (p.p || []).forEach(pid => { if (pid) (KIDS[pid] = KIDS[pid] || []).push(id); }));
+const childOf = {};
+
+/* ---------- hero spread ---------- */
+const spreadPics = [['img/groningen.jpg','Groningen, c. 1900'],['img/parkinson-wedding-1935.jpg','Hoddles Creek, 1935'],['img/fairsea.jpg','The Fairsea, 1952'],['img/macdhui.jpg','The Macdhui, 1941'],['img/kalgoorlie-hannan-street-1901.jpg','Kalgoorlie, 1901'],['img/mountisa1954.jpg','Mount Isa, 1954']];
+const spots = [[2,10,20,62,-5],[19,2,17,82,3],[33,14,30,72,-1.5],[60,4,22,66,4],[79,12,19,64,-3],[47,58,0,0,0]];
+$('#spread').innerHTML = spreadPics.slice(0,5).map(([src,cap],i) => { const [l,t,w,h,r] = spots[i]; return `<figure class="dev" style="left:${l}%;top:${t}%;width:${w}%;height:${h}%;--t:rotate(${r}deg);transform:rotate(${r}deg);z-index:${i===2?3:1}">${imgTag(src, esc(cap))}<figcaption>${esc(cap)}</figcaption></figure>`; }).join('');
+const lines = Object.values(P).filter(p => p.s && p.s !== 'a' && p.s !== 'r').length;
+$('#stats').innerHTML = `<div><b>${Object.keys(P).length}</b><span>people found so far</span></div><div><b>1657</b><span>earliest record, Caistor</span></div><div><b>4</b><span>countries of origin</span></div><div><b>12</b><span>generations, Angus to Caistor</span></div>`;
+
+/* legend */
+$('#legend').innerHTML = ['b','f','p','h','y'].map(k => `<span><i style="background:${RAW[k]}"></i>${SIDE[k][0]} <small style="color:var(--faint)">${SIDE[k][2]}</small></span>`).join('') + `<span><svg width="26" height="8"><path d="M0 4H26" stroke="#bdb6aa" stroke-dasharray="4 5"/></svg>likely, not yet proven</span>`;
+
+/* ---------- tree ---------- */
+const NW = 168, NH = 54, GX = NW + 18, GY = 132;
+const svg = $('#svg'), world = $('#world'), gN = $('#nodes'), gE = $('#edges'), stage = $('#stage');
+let open = new Set(), view = {k:1, x:0, y:0}, cur = {}, sel = null;
+function parentsShown(id) {
+  const p = P[id]; if (!p) return [];
+  const real = (p.p || []).filter(x => x && P[x]);
+  if (real.length) return real;
+  if (p.q) return ['?' + id];
+  return [];
+}
+function hasMore(id) { return !id.startsWith('?') && parentsShown(id).length > 0; }
+function layout() {
+  const pos = {}, edges = []; let slot = 0;
+  (function place(id, depth) {
+    const ps = open.has(id) ? parentsShown(id) : [];
+    const xs = [];
+    ps.forEach(pid => { place(pid, depth + 1); xs.push(pos[pid].x); edges.push([pid, id, !!(P[id] && P[id].u) || pid.startsWith('?')]); childOf[pid] = id; });
+    pos[id] = {x: xs.length ? (xs[0] + xs[xs.length - 1]) / 2 : (slot++) * GX, y: -depth * GY};
+  })(ROOT, 0);
+  return {pos, edges};
+}
+function nodeSVG(id) {
+  if (id.startsWith('?')) {
+    const q = P[id.slice(1)].q;
+    return `<g class="nd ghost" data-id="${id}"><rect class="c" x="${-NW/2}" y="${-NH/2}" width="${NW}" height="${NH}" rx="10"/><text class="nm" x="0" y="-3" text-anchor="middle">Still to find</text><text class="dt" x="0" y="14" text-anchor="middle">${esc(q.length > 26 ? q.slice(0, 25) + '…' : q)}</text></g>`;
+  }
+  const p = P[id], nm = short(p), c = RAW[p.s] || '#999';
+  const n2 = nm.length > 22 ? nm.slice(0, 21) + '…' : nm;
+  const d = (p.d || '').length > 26 ? p.d.slice(0, 25) + '…' : (p.d || '');
+  const more = hasMore(id) && id !== ROOT;
+  const ub = more ? `<g class="ub" data-ub="${id}" transform="translate(0,${-NH/2 - 13})"><circle class="hit" r="16" fill="transparent" stroke="none"/><circle r="10"/>${open.has(id) ? '<path d="M-4 0H4"/>' : '<path d="M-4 0H4M0 -4V4"/>'}</g>` : '';
+  return `<g class="nd${id === sel ? ' sel' : ''}" data-id="${id}" tabindex="0" role="button" aria-label="${esc(p.n)}"><rect class="c" x="${-NW/2}" y="${-NH/2}" width="${NW}" height="${NH}" rx="10"/><rect x="${-NW/2}" y="${-NH/2 + 10}" width="3" height="${NH - 20}" rx="1.5" fill="${c}"/><text class="nm" x="${-NW/2 + 14}" y="-3">${esc(n2)}</text><text class="dt" x="${-NW/2 + 14}" y="14">${esc(d)}</text></g>${ub}`;
+}
+function edgePath(a, b) {
+  const y1 = a.y + NH / 2, y2 = b.y - NH / 2, m = (y1 + y2) / 2;
+  return `M${a.x} ${y1}V${m}H${b.x}V${y2}`;
+}
+let tween = null;
+function render(anchorId) {
+  const {pos, edges} = layout();
+  const ids = Object.keys(pos);
+  const start = {};
+  ids.forEach(id => { start[id] = cur[id] || (childOf[id] && (cur[childOf[id]] || pos[childOf[id]])) || pos[id]; });
+  gN.innerHTML = ids.map(id => `<g class="mv${cur[id] ? '' : ' new'}" data-m="${id}">${nodeSVG(id)}</g>`).join('');
+  gN.querySelectorAll('.new .nd').forEach(n => n.classList.add('new'));
+  gE.innerHTML = edges.map(([a, b, u]) => `<path class="ed${u ? ' u' : ''}" data-a="${a}" data-b="${b}"/>`).join('');
+  const mv = {}; gN.querySelectorAll('[data-m]').forEach(g => mv[g.dataset.m] = g);
+  const ep = [...gE.children];
+  // keep the anchor node visually still while the tree re-flows around it
+  if (anchorId && cur[anchorId] && pos[anchorId]) {
+    const dx = (pos[anchorId].x - cur[anchorId].x) * view.k, dy = (pos[anchorId].y - cur[anchorId].y) * view.k;
+    view.x -= dx; view.y -= dy;
+    Object.keys(start).forEach(id => start[id] = {x: start[id].x + pos[anchorId].x - cur[anchorId].x, y: start[id].y + pos[anchorId].y - cur[anchorId].y});
+    applyView();
+  }
+  const t0 = performance.now(), D = matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 750;
+  cancelAnimationFrame(tween);
+  const step = now => {
+    let t = Math.min(1, (now - t0) / D); t = t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const at = {};
+    ids.forEach(id => { const s = start[id], e = pos[id]; at[id] = {x: s.x + (e.x - s.x) * t, y: s.y + (e.y - s.y) * t}; mv[id].setAttribute('transform', `translate(${at[id].x},${at[id].y})`); });
+    ep.forEach(p => p.setAttribute('d', edgePath(at[p.dataset.a], at[p.dataset.b])));
+    if (t < 1) tween = requestAnimationFrame(step); else { cur = pos; drawMini(); }
+  };
+  tween = requestAnimationFrame(step);
+  return pos;
+}
+function applyView() { world.setAttribute('transform', `translate(${view.x},${view.y}) scale(${view.k})`); drawMini(); }
+/* overview map: every person as a dot in their family's colour, with the visible area outlined */
+const mini = $('#mini'), mc = $('#minic'); let miniT = null, miniRaf = 0;
+function drawMini() { cancelAnimationFrame(miniRaf); miniRaf = requestAnimationFrame(drawMiniNow); }
+function drawMiniNow() {
+  const b = bounds(); if (!b) return;
+  const W = stage.clientWidth, H = stage.clientHeight;
+  const vx0 = -view.x / view.k, vy0 = -view.y / view.k, vx1 = vx0 + W / view.k, vy1 = vy0 + H / view.k;
+  const tol = 4 / view.k;
+  const allIn = vx0 <= b.minx + tol && vy0 <= b.miny + tol && vx1 >= b.maxx - tol && vy1 >= b.maxy - tol;
+  drawLines();
+  mini.classList.toggle('on', !allIn && Object.keys(cur).length > 12);
+  const cw = mini.clientWidth, ch = mini.clientHeight, dpr = devicePixelRatio || 1;
+  if (mc.width !== cw * dpr) { mc.width = cw * dpr; mc.height = ch * dpr; }
+  const pad = 8, sc = Math.min((cw - pad * 2) / (b.maxx - b.minx), (ch - pad * 2) / (b.maxy - b.miny));
+  const ox = (cw - (b.maxx - b.minx) * sc) / 2 - b.minx * sc, oy = (ch - (b.maxy - b.miny) * sc) / 2 - b.miny * sc;
+  miniT = {sc, ox, oy};
+  const c = mc.getContext('2d'); c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, cw, ch);
+  const w = Math.max(1.5, NW * sc), h = Math.max(1.5, NH * sc);
+  Object.entries(cur).forEach(([id, p]) => { c.fillStyle = id.startsWith('?') ? '#cfc9bf' : (RAW[(P[id] || {}).s] || '#999'); c.fillRect(p.x * sc + ox - w / 2, p.y * sc + oy - h / 2, w, h); });
+  c.strokeStyle = '#1c1b19'; c.lineWidth = 1.25; c.fillStyle = 'rgba(28,27,25,.06)';
+  const rx = Math.max(1, vx0 * sc + ox), ry = Math.max(1, vy0 * sc + oy), rw = Math.min(cw - 1, vx1 * sc + ox) - rx, rh = Math.min(ch - 1, vy1 * sc + oy) - ry;
+  c.fillRect(rx, ry, rw, rh); c.strokeRect(rx, ry, rw, rh);
+}
+/* when zoomed far out, name each great-grandparent's branch so the shape of the tree stays readable */
+const LINES = [['jerry','Broesder'],['carla','Degenhart'],['lawrie','Frankish'],['phyllis','Parkinson and Smith'],['bill','Hazenberg'],['meg','Hodgetts'],['doug','Hymus'],['beverly','Brazier']];
+const gLines = $('#lines');
+function drawLines() {
+  const show = view.k < .5;
+  const out = [];
+  LINES.forEach(([id, label]) => {
+    if (!cur[id] || !open.has(id)) return;
+    const ids = []; (function walk(x) { if (!cur[x]) return; ids.push(x); if (open.has(x)) parentsShown(x).forEach(walk); })(id);
+    if (ids.length < 3) return;
+    const xs = ids.map(x => cur[x].x), ys = ids.map(x => cur[x].y);
+    const x0 = Math.min(...xs) - NW / 2, x1 = Math.max(...xs) + NW / 2, y0 = Math.min(...ys) - NH / 2;
+    const fs = 15 / view.k, c = RAW[P[id].s];
+    out.push(`<rect x="${x0}" y="${y0 - 26 / view.k}" width="${x1 - x0}" height="${3 / view.k}" rx="${1.5 / view.k}" fill="${c}" opacity="${show ? .55 : 0}"/><text x="${(x0 + x1) / 2}" y="${y0 - 34 / view.k}" text-anchor="middle" font-size="${fs}" opacity="${show ? 1 : 0}">${label}</text>`);
+  });
+  gLines.innerHTML = out.join('');
+}
+function miniGo(e) {
+  if (!miniT) return; const r = mini.getBoundingClientRect();
+  const wx = (e.clientX - r.left - miniT.ox) / miniT.sc, wy = (e.clientY - r.top - miniT.oy) / miniT.sc;
+  view.x = stage.clientWidth / 2 - wx * view.k; view.y = stage.clientHeight / 2 - wy * view.k; applyView();
+}
+let miniDrag = false;
+mini.addEventListener('pointerdown', e => { e.stopPropagation(); miniDrag = true; mini.setPointerCapture(e.pointerId); miniGo(e); });
+mini.addEventListener('pointermove', e => { if (miniDrag) { e.stopPropagation(); miniGo(e); } });
+mini.addEventListener('pointerup', e => { miniDrag = false; e.stopPropagation(); });
+mini.addEventListener('click', e => e.stopPropagation());
+function animView(to, ms = 700) {
+  const from = {...view}, t0 = performance.now();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) ms = 1;
+  const f = now => { let t = Math.min(1, (now - t0) / ms); t = 1 - Math.pow(1 - t, 3);
+    view = {k: from.k + (to.k - from.k) * t, x: from.x + (to.x - from.x) * t, y: from.y + (to.y - from.y) * t}; applyView(); if (t < 1) requestAnimationFrame(f); };
+  requestAnimationFrame(f);
+}
+function bounds(pos) {
+  const v = Object.values(pos || cur); if (!v.length) return null;
+  return {minx: Math.min(...v.map(p => p.x)) - NW / 2 - 20, maxx: Math.max(...v.map(p => p.x)) + NW / 2 + 20, miny: Math.min(...v.map(p => p.y)) - NH / 2 - 40, maxy: Math.max(...v.map(p => p.y)) + NH / 2 + 30};
+}
+function fitK(pos) { const b = bounds(pos); if (!b) return 1; return Math.min(1.1, (stage.clientWidth - 40) / (b.maxx - b.minx), (stage.clientHeight - 110) / (b.maxy - b.miny)); }
+/* you can always zoom out a little past the whole tree, however big it grows */
+const minK = () => Math.max(.01, Math.min(.15, fitK() * .8));
+function fit(pos, ms) {
+  pos = pos || cur; const b = bounds(pos); if (!b) return;
+  const W = stage.clientWidth, H = stage.clientHeight;
+  const {minx, maxx, miny, maxy} = b;
+  const k = fitK(pos);
+  animView({k, x: W / 2 - (minx + maxx) / 2 * k, y: H / 2 + 30 - (miny + maxy) / 2 * k}, ms);
+}
+function focusOn(id, ms) {
+  const p = cur[id]; if (!p) return;
+  const W = stage.clientWidth, H = stage.clientHeight, k = Math.max(view.k, .8);
+  animView({k, x: W / 2 - p.x * k, y: H * .55 - p.y * k}, ms);
+}
+function initialOpen() { const max = stage.clientWidth < 600 ? 2 : 3; open = new Set(); (function o(id, d) { if (d >= max || !P[id]) return; open.add(id); (P[id].p || []).forEach(x => x && o(x, d + 1)); })(ROOT, 0); }
+function reveal(id) {
+  // open every generation between the root and this person
+  const path = []; (function find(cur, trail) { if (cur === id) { path.push(...trail); return true; } return (P[cur] && P[cur].p || []).some(x => x && P[x] && find(x, [...trail, cur])); })(ROOT, []);
+  path.forEach(x => open.add(x));
+  return path.length || id === ROOT;
+}
+initialOpen();
+setTimeout(() => { const pos = render(); cur = pos; fit(pos, 1); }, 0);
+
+/* tree interactions */
+let ptrs = new Map(), dragMoved = 0, pinch0 = null;
+const tgo = document.getElementById('tgo'), tdone = document.getElementById('tdone');
+const setLive = on => { stage.classList.toggle('live', on); if (!on) { ptrs.clear(); pinch0 = null; stage.classList.remove('drag'); } };
+tgo.addEventListener('click', e => { e.stopPropagation(); setLive(true); });
+tdone.addEventListener('click', e => { e.stopPropagation(); setLive(false); });
+['pointerdown', 'pointerup'].forEach(t => { tgo.addEventListener(t, e => e.stopPropagation()); tdone.addEventListener(t, e => e.stopPropagation()); });
+new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) setLive(false); }), {threshold: 0.15}).observe(stage);
+stage.addEventListener('pointerdown', e => { if (e.target.closest('.res')) return; dragMoved = 0; if (e.pointerType === 'touch' && !stage.classList.contains('live')) return; ptrs.set(e.pointerId, {x: e.clientX, y: e.clientY}); dragMoved = 0; if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch0 = {d: Math.hypot(a.x - b.x, a.y - b.y), k: view.k}; } stage.classList.add('drag'); });
+stage.addEventListener('pointermove', e => {
+  if (!ptrs.has(e.pointerId)) return;
+  const prev = ptrs.get(e.pointerId), now = {x: e.clientX, y: e.clientY}; ptrs.set(e.pointerId, now);
+  if (ptrs.size === 2 && pinch0) { const [a, b] = [...ptrs.values()]; const r = stage.getBoundingClientRect(); zoomAt(pinch0.k * Math.hypot(a.x - b.x, a.y - b.y) / pinch0.d, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top); dragMoved += 10; return; }
+  view.x += now.x - prev.x; view.y += now.y - prev.y; dragMoved += Math.abs(now.x - prev.x) + Math.abs(now.y - prev.y); if (dragMoved > 4 && !stage.hasPointerCapture(e.pointerId)) { try { stage.setPointerCapture(e.pointerId); } catch (_) {} } applyView();
+});
+const up = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch0 = null; if (!ptrs.size) stage.classList.remove('drag'); };
+stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+function zoomAt(k, cx, cy) { k = Math.max(minK(), Math.min(2.4, k)); view.x = cx - (cx - view.x) * k / view.k; view.y = cy - (cy - view.y) * k / view.k; view.k = k; applyView(); }
+stage.addEventListener('wheel', e => { if (!e.ctrlKey && !e.metaKey) return; e.preventDefault(); const r = stage.getBoundingClientRect(); zoomAt(view.k * Math.exp(-e.deltaY * .01), e.clientX - r.left, e.clientY - r.top); }, {passive: false});
+svg.addEventListener('click', e => {
+  if (dragMoved > 6) return;
+  const ub = e.target.closest('[data-ub]');
+  if (ub) { const id = ub.dataset.ub; if (open.has(id)) { closeUp(id); } else open.add(id); render(id); setTimeout(() => keepVisible(id), 780); return; }
+  const nd = e.target.closest('.nd'); if (!nd) return;
+  const id = nd.dataset.id; if (id.startsWith('?')) { openPerson(id.slice(1)); return; }
+  openPerson(id);
+});
+svg.addEventListener('keydown', e => { const nd = e.target.closest && e.target.closest('.nd'); if (nd && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openPerson(nd.dataset.id); } });
+function closeUp(id) { (function c(x) { open.delete(x); (P[x] && P[x].p || []).forEach(y => y && c(y)); })(id); }
+function keepVisible(id) {
+  // after uncovering, glide so the new generation is in view
+  const ps = parentsShown(id).map(x => cur[x]).filter(Boolean); if (!ps.length) return;
+  const W = stage.clientWidth, H = stage.clientHeight; const pts = [cur[id], ...ps];
+  const minx = Math.min(...pts.map(p => p.x)) * view.k + view.x - NW, maxx = Math.max(...pts.map(p => p.x)) * view.k + view.x + NW, miny = Math.min(...pts.map(p => p.y)) * view.k + view.y - NH;
+  let dx = 0, dy = 0; if (minx < 0) dx = -minx; else if (maxx > W) dx = W - maxx; if (miny < 20) dy = 20 - miny;
+  if (dx || dy) animView({k: view.k, x: view.x + dx, y: view.y + dy}, 600);
+}
+$('#zin').onclick = () => zoomAt(view.k * 1.25, stage.clientWidth / 2, stage.clientHeight / 2);
+$('#zout').onclick = () => zoomAt(view.k / 1.25, stage.clientWidth / 2, stage.clientHeight / 2);
+$('#fit').onclick = () => fit();
+$('#all').onclick = () => { Object.keys(P).forEach(id => open.add(id)); const pos = render(); setTimeout(() => fit(pos), 50); };
+$('#reset').onclick = () => { ROOT = window.ROOT; initialOpen(); cur = {}; const pos = render(); fit(pos, 600); };
+addEventListener('resize', () => fit(cur, 1));
+
+/* search */
+const qi = $('#q'), res = $('#res'); let hits = [], hk = 0;
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+function showHits() { res.innerHTML = hits.map((id, i) => `<button data-id="${id}" class="${i === hk ? 'k' : ''}">${esc(P[id].n)}<small>${esc(P[id].d || '')}</small></button>`).join(''); res.style.display = hits.length ? 'block' : 'none'; }
+qi.addEventListener('input', () => { const q = norm(qi.value.trim()); hk = 0; hits = q.length < 2 ? [] : Object.keys(P).filter(id => norm(P[id].n + ' ' + (P[id].sn || '')).includes(q)).slice(0, 7); showHits(); });
+qi.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { hk = Math.min(hk + 1, hits.length - 1); showHits(); e.preventDefault(); } else if (e.key === 'ArrowUp') { hk = Math.max(hk - 1, 0); showHits(); e.preventDefault(); } else if (e.key === 'Enter' && hits[hk]) goTo(hits[hk]); else if (e.key === 'Escape') { hits = []; showHits(); } });
+res.addEventListener('click', e => { const b = e.target.closest('button'); if (b) goTo(b.dataset.id); });
+document.addEventListener('click', e => { if (!e.target.closest('.search')) { res.style.display = 'none'; } });
+function goTo(id) {
+  hits = []; showHits(); qi.value = '';
+  if (!reveal(id)) { openPerson(id); return; }
+  sel = id; render(); setTimeout(() => focusOn(id), 780);
+  document.getElementById('tree').scrollIntoView({behavior: 'smooth'});
+  setTimeout(() => openPerson(id), 900);
+}
+
+/* ---------- drawer ---------- */
+const dr = $('#dr'), drin = $('#drin'), scrim = $('#scrim');
+function lifeEvents(p) {
+  const b = p.b, x = p.x || (b ? Math.min(b + 95, 2026) : null); if (!b) return [];
+  const regs = p.r || [];
+  return WORLD.filter(([y, , r]) => y >= b && y <= x && (r === 'all' || r.split(' ').some(k => regs.includes(k))));
+}
+function chips(ids) { return ids.filter(id => id && P[id]).map(id => `<button class="pp" data-open="${id}" style="--c:${RAW[P[id].s]}"><i></i>${esc(short(P[id]))}</button>`).join(''); }
+function openPerson(id, fromHash) {
+  const p = P[id]; if (!p) return;
+  sel = id; gN.querySelectorAll('.nd').forEach(n => n.classList.toggle('sel', n.dataset.id === id));
+  const kids = KIDS[id] || [];
+  const ev = lifeEvents(p);
+  dr.style.setProperty('--c', RAW[p.s]);
+  $('#drside').innerHTML = `<i></i>${esc(SIDE[p.s][0])} · ${esc(SIDE[p.s][2])}`;
+  drin.innerHTML = `<h3>${esc(p.n)}</h3><div class="dd">${esc(p.d || '')}${p.u ? ' · parents likely, not yet proven' : ''}</div>`
+    + (p.img ? `<figure class="ph dev"><div class="fr">${imgTag(p.img, esc(p.n))}</div></figure>` : '')
+    + (p.t ? p.t.split(/\n\n+/).map(x => `<p>${esc(x)}</p>`).join('') : `<p style="color:var(--soft)">So far only a name in the records. More may turn up.</p>`)
+    + (p.q ? `<p class="q">${esc(p.q)}.</p>` : '')
+    + ((p.p || []).some(x => x && P[x]) ? `<h4>Parents</h4><div class="rel">${chips(p.p)}</div>` : '')
+    + (kids.length ? `<h4>Children</h4><div class="rel">${chips(kids)}</div>` : '')
+    + (ev.length ? `<h4>What was happening in their lifetime</h4><ul class="ev">${ev.map(([y, t]) => `<li><b>${y}</b><span>${esc(t)}${p.b ? `<em>${esc(short(p).split(' ')[0])} was ${y - p.b}</em>` : ''}</span></li>`).join('')}</ul>` : '')
+    + (p.src ? `<h4>Records</h4><div class="src">${p.src.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)} ↗</a>`).join('')}</div>` : '')
+    + `<div class="acts">${p.ch ? `<a class="tbtn" style="display:inline-flex;align-items:center;text-decoration:none" href="#${p.ch}" data-close>Read their chapter</a>` : ''}<button class="tbtn" data-tree="${id}">Show in the tree</button>${(p.p || []).some(x => x && P[x]) && id !== ROOT ? `<button class="tbtn" data-root="${id}">Their own tree</button>` : ''}</div>`;
+  dr.classList.remove('swap'); void dr.offsetWidth; dr.classList.add('swap');
+  dr.classList.add('on'); dr.setAttribute('aria-hidden', 'false'); scrim.classList.add('on');
+  dr.scrollTop = 0;
+  const im = drin.querySelector('.dev'); if (im) setTimeout(() => im.classList.add('in'), 250);
+  if (!fromHash && location.hash !== '#p-' + id) history.replaceState(null, '', '#p-' + id);
+}
+function closeDr() { dr.classList.remove('on'); dr.setAttribute('aria-hidden', 'true'); scrim.classList.remove('on'); if (location.hash.startsWith('#p-')) history.replaceState(null, '', ' '); }
+$('#drx').onclick = closeDr; scrim.onclick = closeDr;
+addEventListener('keydown', e => { if (e.key === 'Escape') closeDr(); });
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-open]'); if (o) { openPerson(o.dataset.open); return; }
+  const t = e.target.closest('[data-tree]'); if (t) { closeDr(); goTo(t.dataset.tree); return; }
+  const r = e.target.closest('[data-root]'); if (r) { ROOT = r.dataset.root; initialOpen(); cur = {}; sel = ROOT; closeDr(); document.getElementById('tree').scrollIntoView({behavior: 'smooth'}); const pos = render(); fit(pos, 600); return; }
+  if (e.target.closest('[data-close]')) closeDr();
+});
+
+/* chapter people chips */
+document.querySelectorAll('[data-people]').forEach(el => el.innerHTML = chips(el.dataset.people.split(' ')));
+
+/* figure shapes: paired photographs share a height, tall portraits stay modest, long document strips can be swiped on a phone */
+document.querySelectorAll('.pair').forEach(el => { const a = [...el.querySelectorAll('img')].map(i => i.width / i.height); if (a.length === 2) el.style.setProperty('--cols', `minmax(0,${a[0].toFixed(3)}fr) minmax(0,${a[1].toFixed(3)}fr)`); });
+document.querySelectorAll('.body > figure.ph').forEach(f => { const i = f.querySelector('img'), ar = i.width / i.height;
+  if (ar < .8) f.classList.add('tall');
+  if (ar > 3) { f.classList.add('strip'); f.style.setProperty('--sh', Math.min(+i.getAttribute('height'), 210) + 'px'); f.querySelector('figcaption').insertAdjacentHTML('afterbegin', '<span class="sw">Swipe sideways to read across</span>'); } });
+
+/* ---------- voyages ---------- */
+const V = [
+['1848','Hooghly','London → Adelaide','Dr Charles Houlton Webb, ship\'s doctor, with two young sons','drwebb'],
+['1854','Parsee','Plymouth → Melbourne','Joseph Warren and Mary Fox of Devonport','josephw'],
+['1855','Telegraph','England → Port Adelaide','Charles Hicks and Ann Spencer, with Martha, aged two','charlesh'],
+['1857','Appleton','England → Melbourne, 102 days','Joseph Smith, Isabella Jones and Joseph Henry, aged eight','joseph'],
+['1860s','Unknown','England → South Australia','Elliott Agar Webb, following the father he had never met','elliott'],
+['1874','Not yet known','England → Queensland','The Warbricks of Oldham with Lucy, Ernest and Frank, aged two; Martha Warbrick died on the voyage','frank'],
+['1897','Orizaba','London → Albany','Emily Frankish with Jesse, Robert and Richard; Thomas had gone ahead','thomas2'],
+['1934','Montoro','Rabaul → Brisbane','Bruce and Aileen Brazier with Margaret, 2, and Beverly, 1; 2 September','beverly'],
+['1941','Macdhui, Neptuna, Malaita','New Guinea → Australia','The compulsory evacuation of women and children; Beverly, aged eight','beverly'],
+['1950','Johan van Oldenbarnevelt','Netherlands → Sydney','Taeke and Aukje Hazenberg with Willem (Bill), 14, Aaltje, Tetje and Janna, 4 October','bill'],
+['1951','Bulolo','New Guinea → Brisbane','Bruce and Aileen Brazier with Beverly, Margaret and young Bruce, 2 January','bruce'],
+['1952','Fairsea','Netherlands → Sydney','Tjaard Jacob (Jerry) Broesder, aged 20, 10 October','jerry'],
+['1957','Aircraft','Netherlands → Sydney','Johannes Degenhart and Maria Agatha Schuijt, 30 January','johannesc'],
+['1958','Aircraft PH-LKW','Netherlands → Sydney','Carla Degenhart, aged 23, 4 November','carla'],
+['1962','Groote Beer','Netherlands → Australia','Carla\'s widowed mother, for a year','mariavdb']];
+$('#ledger tbody').innerHTML = V.map(([y, v, r, w, id]) => `<tr class="rv"><td class="y">${y}</td><td class="v">${esc(v)}</td><td>${esc(r)}</td><td class="w"><span class="who"><span class="dot" style="background:${RAW[P[id].s]}"></span><button data-open="${id}">${esc(w)}</button></span></td></tr>`).join('');
+
+/* ---------- timeline ---------- */
+const FAM = [
+[1657,'Virgil Frankish marries Mary Pinder at Caistor, Lincolnshire','f','virgil1668'],
+[1752,'Virgil Frankish marries Mary Ellis at Frodingham','f','virgil0'],
+[1755,'Anna Hindriks born in Midwolda, Groningen','b','anna'],
+[1780,'Harm Derks "from Bonda" marries Anna Hindriks at Midwolda','b','harm'],
+[1782,'Hindrik Harms Broesder baptised at Midwolda, the first to carry the name','b','hindrik'],
+[1798,'Wiebe Willems marries Aafke Gales; their children take the name Hazenberg','h','wiebe'],
+[1800,'Jan Joosten Hulzebos, a tailor from East Frisia, marries at Oudeschans','b','janjh'],
+[1787,'Virgil Frankish marries Ann Hickson at Elsham','f','virgil1'],
+[1818,'Charles Houlton Webb born in London','p','drwebb'],
+[1832,'Virgil Robert Frankish baptised at Barrow upon Humber; Christen Holst, a Danish mate, marries in Amsterdam','f','virgilr'],
+[1839,'Willem Wiebes Hazenberg marries Anna Grabhorn of Oldenburg','h','willemw'],
+[1833,'Tjaard Hindriks Broesder, farmhand, marries Anje Jans Lewe','b','tjaardh'],
+[1848,'Dr Webb reaches Adelaide on the Hooghly','p','drwebb'],
+[1854,'Virgil Robert Frankish marries Jane Batler in Hull','f','virgilr'],
+[1857,'The Smiths reach Melbourne on the Appleton','p','joseph'],
+[1862,'Georg Bruckmann, a seaman from Kassel, marries in Amsterdam','b','georg'],
+[1866,'Jakob Broesder marries Epke Hulzebos at Noordbroek','b','jakob'],
+[1870,'Dr Webb dies as Mayor of Clare','p','drwebb'],
+[1889,'Thomas Frankish marries Emily Wetherall in Hull','f','thomas2'],
+[1893,'George Herbert Brazier marries Ellen Baldwin in Brisbane','y','george'],
+[1896,'Tjaard Jakob Broesder, baker, marries Antje Dijk','b','tjaardj'],
+[1899,'Frank Warbrick marries Adele Janet White in Brisbane','y','frank'],
+[1900,'Bruce Wilton Brazier born at Toowoomba','y','bruce'],
+[1901,'Ern Smith marries Mabel Ann Webb at St Kilda','p','ern'],
+[1904,'Walter Frankish born at Northam, WA','f','walter'],
+[1907,'Willem Hendriks Hazenberg marries Yttje van der Meer','h','willemh'],
+[1910,'Taeke Hazenberg born at Grouw, Friesland','h','taeke'],
+[1922,'The Broesders run Café Dennenbosch in Zuidlaren','b','tjaardj'],
+[1931,'Walter Frankish marries Mona Fisk in Perth','f','mona'],
+[1868,'Leendert de Bruijn born at Hoornaar','b','leendertb'],
+[1932,'Jerry Broesder born in Dordrecht','b','jerry'],
+[1927,'Doug Hymus born at Cooroy, Queensland','y','doug'],
+[1933,'Beverly Brazier born; Taeke Hazenberg marries Aukje Elzinga','y','beverly'],
+[1908,'Walter Frankish, four, hurt by a Perth tram','f','walter'],
+[1927,'Bruce Brazier appointed a clerk in the New Guinea service','y','bruce'],
+[1934,'The Braziers sail from Rabaul to Brisbane on the Montoro','y','beverly'],
+[1957,'Bill Hazenberg and Meg Hodgetts engaged','h','meg'],
+[1941,'Private E. A. Fisk writes to his niece Ramona Frankish from Jerusalem','f','romona'],
+[1960,'Joanne Hazenberg born; Eva Hazenberg marries Colin Linderberg','h','bill'],
+[1964,'Trevor Hazenberg born at Bundaberg','h','trevor'],
+[1897,'Emily Frankish and three sons land at Albany from the Orizaba','f','thomas2'],
+[1902,'Thomas Frankish speaks for Northam\'s railway men on the eight-hour day','f','thomas2'],
+[1915,'William George Parkinson enlists in the AIF','p','wgp'],
+[1917,'William Parkinson walks out of camp at Codford','p','wgp'],
+[1918,'Matilda Fisk divorces Edward Charles Fisk in Perth','f','edwardf'],
+[1951,'Lawrie Frankish enters the Royal Australian Naval College as a cadet midshipman','f','lawrie'],
+[1929,'Bruce Brazier marries Aileen Warbrick at Scots Church, Clayfield, in Brisbane','y','aileen'],
+[1935,'Bruce Brazier posted from Rabaul to Kieta, Bougainville','y','bruce'],
+[1942,'Mrs Brazier and three children listed among the New Guinea evacuees','y','aileen'],
+[1948,'Bruce Brazier, Treasury, sails back to Port Moresby on the Bulolo','y','bruce'],
+[1951,'Margaret Brazier a debutante at the Michaelmas Ball, Port Moresby','y','margaret'],
+[1959,'Taeke, Aukje and Ietje Hazenberg naturalised at Bundaberg','h','taeke'],
+[1964,'Bill Hazenberg drives the Scott harvester in the Mackay trials','h','bill'],
+[1936,'Willem (Bill) Hazenberg born at Irnsum, Friesland','h','bill'],
+[1935,'Carla Degenhart born; Ben Parkinson marries Alma Smith','b','carla'],
+[1936,'Phyllis Parkinson born at Yarra Junction','p','phyllis'],
+[1937,'Lawrie Frankish born in Perth; Meg Hodgetts born','f','lawrie'],
+[1941,'Carla\'s father lost with the SS Groenlo','b','hendricus'],
+[1943,'Flight Sergeant Robert Frankish killed; Bruce Brazier enlists in Sydney and serves with ANGAU','f','raaf'],
+[1945,'Doug Hymus joins the RAAF in Brisbane, aged 18','y','doug'],
+[1950,'The Hazenbergs reach Sydney on the Johan van Oldenbarnevelt','h','bill'],
+[1951,'The Braziers land at Brisbane from the Bulolo','y','beverly'],
+[1952,'Jerry reaches Sydney on the Fairsea','b','jerry'],
+[1960,'Bill Hazenberg\'s naturalisation file is registered in Brisbane','h','bill'],
+[1958,'Carla flies to Sydney; Lawrie marries Phyllis at Gladysdale','b','carla'],
+[1961,'Merrilee Frankish born at Yarra Junction','f','merrilee'],
+[1962,'Lawrie and Phyllis move to a 100-cow dairy at Murrabit, near Kerang','f','lawrie'],
+[1974,'Lawrie and Phyllis buy Marston, 3,000 acres at Tara','f','lawrie'],
+[1628,'Huguenot families from Walloon Flanders settle at Sandtoft, near the early Frankish parishes','f','lawrie'],
+[1869,'John Tudman marries Emma Pearson in Brisbane','h','johntudman'],
+[1906,'Everard Hodgetts born in Queensland','h','everard'],
+[1934,'Everard Hodgetts marries Amy Louisa Haken','h','amyh'],
+[1987,'Taeke Hazenberg dies at Bundaberg','h','taeke'],
+[1994,'Aukje Hazenberg buried beside Taeke at Bundaberg','h','aukje'],
+[2012,'Doug Hymus dies, aged 85','y','doug'],
+[2021,'Meg dies at Bundaberg','h','meg'],
+[2022,'Jerry Broesder dies in Adelaide, aged 89','b','jerry'],
+[2023,'Carla Broesder dies in Adelaide','b','carla']];
+const FIL = [['all','Everything'],['b','Broesder'],['f','Frankish'],['p','Parkinson, Smith, Webb'],['h','Hazenberg'],['y','Hymus and Brazier'],['w','World events']];
+let fil = 'all';
+function drawTL() {
+  $('#filters').innerHTML = FIL.map(([k, l]) => `<button class="chip" data-f="${k}" aria-pressed="${fil === k}">${k !== 'all' ? `<i style="background:${k === 'w' ? '#fff;border:1px solid #8d8880' : RAW[k]}"></i>` : ''}${l}</button>`).join('');
+  let rows = [...FAM.map(([y, t, s, id]) => ({y, t, s, id})), ...WORLD.map(([y, t]) => ({y, t, s: 'w'}))].filter(r => fil === 'all' || r.s === fil).sort((a, b) => a.y - b.y || (a.s === 'w') - (b.s === 'w'));
+  let lastC = null;
+  $('#tl').innerHTML = rows.map(r => { const c = Math.floor(r.y / 100); const head = c !== lastC ? `<li style="display:block"><span class="cent">${c * 100}s</span></li>` : ''; lastC = c;
+    return head + `<li class="rv${r.s === 'w' ? ' w' : ''}" style="--c:${RAW[r.s] || '#fff'}"><span class="yr">${r.y}</span><span class="dt"></span><span class="tx">${r.id ? `<button data-open="${r.id}">${esc(r.t)}</button>` : esc(r.t)}</span></li>`; }).join('');
+  observe();
+}
+$('#filters').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) { fil = b.dataset.f; drawTL(); } });
+
+/* ---------- open questions ---------- */
+const Q = [
+['h','Meg\'s store','The family remember Meg running a corner grocery store in Gin Gin, and perhaps a laundromat. What was it called, and when?','The Bundaberg News-Mail, and Gin Gin locals.','meg'],
+['y','Doug\'s parents','Doug Hymus was born at Cooroy on 5 January 1927, just past the public Queensland index.','His WWII service file (NAA A13859, 171392) is free to request and names his next of kin.','doug'],
+['y','The Hymus–Brazier wedding','Doug and Beverly were engaged in November 1951 and married by early 1956, when they lived in Cairns with two children. Where and when was the wedding?','Their marriage certificate, from the Queensland registry.','doug'],
+['y','The Nauru years','The Territory gazettes have Bruce Brazier in the Treasury at Port Moresby until at least June 1957, and nothing in Trove places the family on Nauru. When were they there, and who was working?','Bruce\'s later staff papers at the National Archives (his New Guinea file, A452, ends in 1955), and Beverly\'s or Margaret\'s memory.','bruce'],
+['f','The voyage west','Emily and the boys landed at Albany from the Orizaba in April 1897. When did Thomas go out ahead of them, and on which ship?','Albany and Fremantle passenger lists, 1895–1897. A Mr Frankish landed at Albany from Adelaide in October 1895.','thomas2'],
+['f','The convict Frankish','Family tradition tells of a Frankish or Wetherall transported for sheep stealing. James Frankish of Louth was transported for life for sheep stealing in 1830 and died at Launceston in 1833; a Lawrence Wetherall came out on the same ship. Is either connected to our line?','Louth and Elsham parish registers; Tasmanian conduct records (CON31/1/14).','virgilr'],
+['p','Grandpa Parky\'s parents','William George Parkinson was born at Greendale, Victoria, about 1879. His parents are not yet identified, and the family remember France where his service file shows only England.','His 1899 marriage certificate, the Victorian birth index for Greendale about 1879, and his court-martial file (NAA A471, 11332).','wgp'],
+['f','Grandpa Fisk\'s mineral sands','The family remember Edward Charles Fisk seeing the future in mineral sands. Where did he try to start, and when?','WA Mines Department files at the State Records Office, and mineral claim notices in the Government Gazette.','edwardf'],
+['f','The farm on Marston Moor','The family farmed on Marston Moor in Yorkshire and lost the farm in a foot-and-mouth epidemic. Which farm, which branch of the family, and when?','Tithe and enclosure maps for Long Marston and Tockwith; Yorkshire newspapers on foot-and-mouth outbreaks; the Wetherall family of Tadcaster and Bramham.','lawrie'],
+['f','The Huguenot line','Family tradition holds that the Frankishes were Huguenots from near Flanders. Do they appear among the Sandtoft settlers on Hatfield Chase?','The Sandtoft chapel register (1642–1685) and Huguenot Society publications, set against the Caistor entries from 1657.','lawrie'],
+['b','The innkeeper\'s wedding','Leendert de Bruijn of Hoornaar and Gijsbertje de Kreij of Schelluinen married around 1888. Where, and when exactly?','Civil marriage records of the Alblasserwaard and Vijfheerenlanden, not yet indexed online.','leendertb'],
+['b','From Bonda','Harm Derks, who married at Midwolda in 1780, came "from Bonda". Was he baptised at Bunde in East Frisia?','The Reformed church books of Bunde, Germany.','harm'],
+['b','Jerry\'s and Carla\'s files','Alien registration files, often with a photograph, address and next of kin.','Free digitisation requests to the National Archives in Adelaide.','jerry']];
+$('#files').innerHTML = Q.map(([s, h, q, a, id]) => `<div class="file rv"><div class="tag"><i style="background:${RAW[s]}"></i>${SIDE[s][0]}</div><h3>${esc(h)}</h3><p>${esc(q)}</p><p class="lead">${esc(a)}</p><button class="pp" data-open="${id}" style="--c:${RAW[s]}"><i></i>${esc(short(P[id]))}</button></div>`).join('');
+
+/* ---------- reveal, develop, era ---------- */
+let io;
+function observe() {
+  io = io || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -8% 0px', threshold: .12});
+  document.querySelectorAll('.rv:not(.in),.dev:not(.in)').forEach(el => { if (!el.closest('aside')) io.observe(el); });
+}
+drawTL(); observe();
+setTimeout(() => document.querySelectorAll('#spread .dev').forEach((f, i) => setTimeout(() => f.classList.add('in'), 250 + i * 420)), 100);
+
+const eraY = $('#eraY'), navera = $('#navera'), eraBox = $('#era'); let eraNow = 2026, eraAnim;
+function setEra(y) {
+  if (y === eraNow) return; const from = eraNow, t0 = performance.now(); eraNow = y; cancelAnimationFrame(eraAnim);
+  const f = now => { const t = Math.min(1, (now - t0) / 900), e = 1 - Math.pow(1 - t, 3), v = Math.round(from + (y - from) * e); eraY.textContent = v; navera.textContent = v; if (t < 1) eraAnim = requestAnimationFrame(f); };
+  eraAnim = requestAnimationFrame(f);
+}
+const eraIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setEra(+e.target.dataset.era); }), {rootMargin: '-45% 0px -50% 0px'});
+document.querySelectorAll('[data-era]').forEach(el => eraIO.observe(el));
+navera.textContent = 2026;
+
+/* nav: active section and border */
+/* family lines: panel and chapter rail */
+const FLINES = [
+  {who: "Rory's father", c: '--b', sn: 'Broesder · de Bruijn · Degenhart · van den Berg', ch: ['groningen', 'dordrecht', 'crossing']},
+  {who: "Rory's mother", c: '--f', sn: 'Frankish · Wetherall · Parkinson · Webb', ch: ['frankish', 'yarra']},
+  {who: "Claire's father", c: '--h', sn: 'Hazenberg · Elzinga · Hodgetts · Haken', ch: ['hazenberg']},
+  {who: "Claire's mother", c: '--y', sn: 'Brazier · Hymus · Warbrick · Napier', ch: ['guinea']}
+];
+const SHORT = {groningen: 'Groningen', dordrecht: 'Dordrecht', crossing: 'The crossing', frankish: 'Frankish', yarra: 'Upper Yarra', hazenberg: 'Hazenberg', guinea: 'New Guinea', together: 'Together'};
+const chapEls = [...document.querySelectorAll('article.chap')];
+const chInfo = {}; chapEls.forEach((el, i) => { chInfo[el.id] = {n: i + 1, t: el.querySelector('h2').textContent, d: (el.querySelector('.when') || {}).textContent || '', c: (el.getAttribute('style') || '').match(/var\((--\w+)\)/)?.[1] || '--ink'}; });
+const lpBox = $('#lpBox'), lp = $('#lp'), linesBtn = $('#linesBtn'), lscrim = $('#lscrim');
+lpBox.innerHTML = FLINES.map((g, gi) => `<div class="grp" style="--c:var(${g.c});transition-delay:${60 + gi * 50}ms"><div class="who"><i></i>${g.who}</div><div class="sn">${g.sn}</div>${g.ch.map(id => `<a href="#${id}"><span class="n">${chInfo[id].n}</span><span class="t">${chInfo[id].t}</span><span class="d">${chInfo[id].d}</span></a>`).join('')}</div>`).join('') +
+  `<div class="foot"><a class="meet" href="#together">${chInfo.together.n} · ${chInfo.together.t}</a><a href="#tree">The tree</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a></div>`;
+function setLP(o) { lp.classList.toggle('open', o); lscrim.classList.toggle('on', o); linesBtn.setAttribute('aria-expanded', o); if (o) setTimeout(() => lpBox.querySelector('a')?.focus({preventScroll: true}), 200); }
+linesBtn.addEventListener('click', e => { e.stopPropagation(); setLP(!lp.classList.contains('open')); });
+lscrim.addEventListener('click', () => setLP(false));
+lpBox.addEventListener('click', e => { if (e.target.closest('a')) setLP(false); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && lp.classList.contains('open')) { setLP(false); linesBtn.focus(); } });
+const railTr = $('#railTr'), railPg = $('#railPg');
+railTr.innerHTML = FLINES.map((g, gi) => (gi ? '<span class="sep"></span>' : '') + g.ch.map(id => `<a href="#${id}" data-ch="${id}" style="--c:var(${chInfo[id].c})"><span class="n">${chInfo[id].n}</span>${SHORT[id]}</a>`).join('')).join('') +
+  `<span class="sep"></span><a href="#together" data-ch="together" style="--c:var(--ink)"><span class="n">${chInfo.together.n}</span>${SHORT.together}</a>`;
+const railA = [...railTr.querySelectorAll('a')]; let curCh = null;
+function railUpdate() {
+  const mid = innerHeight * .4, nav = $('#nav'); let act = null;
+  for (const el of chapEls) { const r = el.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) { act = el; break; } }
+  const chs = $('#chapters').getBoundingClientRect(); nav.classList.toggle('inch', chs.top < innerHeight * .5 && chs.bottom > 120);
+  if (act) { const r = act.getBoundingClientRect(); railPg.style.transform = `scaleX(${Math.min(1, Math.max(0, (mid - r.top) / r.height))})`; railPg.style.background = `var(${chInfo[act.id].c})`; }
+  else railPg.style.transform = 'scaleX(0)';
+  const id = act ? act.id : null;
+  if (id !== curCh) { curCh = id;
+    const g = FLINES.find(g => g.ch.includes(id)), cur = $('#railCur'), lab = g ? g.who + "'s side" : (id === 'together' ? 'Where they meet' : '');
+    cur.style.setProperty('--c', g ? `var(${g.c})` : 'var(--ink)'); if (cur.lastChild.textContent !== lab) { cur.lastChild.textContent = lab; cur.classList.remove('sw'); void cur.offsetWidth; cur.classList.add('sw'); } railA.forEach(a => a.classList.toggle('on', a.dataset.ch === id)); const on = railA.find(a => a.dataset.ch === id); if (on) { const tr = railTr, l = on.offsetLeft - tr.clientWidth / 2 + on.offsetWidth / 2; tr.scrollTo({left: l, behavior: 'smooth'}); } }
+}
+addEventListener('scroll', railUpdate, {passive: true}); addEventListener('resize', railUpdate); railUpdate();
+const navLinks = [...document.querySelectorAll('#links a')];
+const secIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const id = e.target.id; navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + id)); } }), {rootMargin: '-40% 0px -55% 0px'});
+['tree', 'voyages', 'timeline', 'unknown'].forEach(id => secIO.observe(document.getElementById(id)));
+addEventListener('scroll', () => { $('#nav').classList.toggle('sc', scrollY > 10); eraBox.classList.toggle('show', scrollY > innerHeight * .6); }, {passive: true});
+
+/* hash: #p-id opens a person */
+function route() { const h = location.hash; if (h.startsWith('#p-') && P[h.slice(3)]) openPerson(h.slice(3), true); }
+addEventListener('hashchange', route); route();
+}
+</script>
+</body>
+</html>
