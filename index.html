@@ -335,6 +335,25 @@ aside.dr.on{transform:none}
   .dev img{filter:sepia(.18);opacity:1;transform:none}
   .rv{opacity:1;transform:none}
 }
+.mctl{display:flex;align-items:center;gap:14px;margin:6px 0 18px;flex-wrap:wrap}
+.mctl input[type=range]{flex:1;min-width:160px;accent-color:var(--ink)}
+.mlab{font-size:14px;color:var(--soft);min-width:220px}
+.mlab b{color:var(--ink);font-weight:600}
+.mpan{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:820px){.mpan{grid-template-columns:1fr}}
+.mp{margin:0;background:#f3f1ec;border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.mp figcaption{font-size:12.5px;color:var(--soft);padding:10px 14px 0}
+.mp svg{display:block;width:100%;height:auto}
+.mp .land{fill:#e4e0d7;stroke:#fbfaf8;stroke-width:.8}
+.mp .lk{fill:none;stroke-width:1.2;opacity:.55;transition:opacity .4s}
+.mp .lk.old{opacity:.14}
+.mp .dt{cursor:pointer;transition:opacity .4s,r .4s;stroke:#fff;stroke-width:1.2}
+.mp .dt.old{opacity:.28}
+.mp .dt.sel{stroke:var(--ink);stroke-width:2.2}
+.mp .lb{font:600 11px var(--sans);fill:var(--ink);paint-order:stroke;stroke:#f3f1ec;stroke-width:3px;pointer-events:none}
+.mwho{margin-top:16px;min-height:44px}
+.mwho h4{margin:0 0 8px;font:600 14px var(--sans)}
+.mwho .rel{display:flex;flex-wrap:wrap;gap:6px}
 </style>
 </head>
 <body>
@@ -342,7 +361,7 @@ aside.dr.on{transform:none}
 <nav class="top" id="nav"><div class="in">
   <a class="brand" href="#top">Angus and Elke's family</a>
   <div class="links" id="links">
-    <button class="lines" id="linesBtn" aria-expanded="false" aria-controls="lp"><span class="dots"><b style="background:var(--b)"></b><b style="background:var(--f)"></b><b style="background:var(--h)"></b><b style="background:var(--y)"></b></span>Family lines<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><a href="#tree">Tree</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a>
+    <button class="lines" id="linesBtn" aria-expanded="false" aria-controls="lp"><span class="dots"><b style="background:var(--b)"></b><b style="background:var(--f)"></b><b style="background:var(--h)"></b><b style="background:var(--y)"></b></span>Family lines<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><a href="#tree">Tree</a><a href="#map">Map</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a>
   </div>
   <div class="navera" id="navera"></div>
 </div>
@@ -546,6 +565,24 @@ aside.dr.on{transform:none}
 </div>
 </main>
 
+<section class="band" id="map" data-era="1850" style="background:var(--paper);border-top:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="thead">
+      <div>
+        <div class="kick"><i></i>The map</div>
+        <h2>Where they came from</h2>
+        <p>Press play to travel down the generations, from the oldest records to Angus and Elke's grandparents. Each dot is a town where an ancestor was born or first appears in the records; lines run from parents to their child. Tap a dot to see who was there.</p>
+      </div>
+    </div>
+    <div class="mctl"><button class="tbtn" id="mplay" aria-label="Play">Play</button><input type="range" id="mgen" min="1" max="10" step="1" value="10" aria-label="Generation"><div class="mlab" id="mlab"></div></div>
+    <div class="mpan">
+      <figure class="mp"><figcaption>England, the Netherlands and Germany</figcaption><svg id="m-eu" role="img" aria-label="Map of ancestors' towns in Europe"></svg></figure>
+      <figure class="mp"><figcaption>Australia and New Guinea</figcaption><svg id="m-au" role="img" aria-label="Map of ancestors' towns in Australia and New Guinea"></svg></figure>
+    </div>
+    <div class="mwho" id="mwho"></div>
+  </div>
+</section>
+
 <section class="band" id="voyages" data-era="1952">
   <div class="wrap">
     <div class="kick"><i></i>Arrivals</div>
@@ -595,6 +632,7 @@ let ROOT = window.ROOT;
 const $ = s => document.querySelector(s);
 const SIDE = {b:['Broesder','var(--b)',"Rory's father's side"],f:['Frankish','var(--f)',"Rory's mother's side"],p:['Parkinson, Smith and Webb','var(--p)',"Rory's mother's side"],h:['Hazenberg','var(--h)',"Claire's father's side"],y:['Hymus and Brazier','var(--y)',"Claire's mother's side"],r:['Rory and Claire','var(--r)','Parents'],a:['Angus','var(--a)','Angus']};
 const RAW = {b:'#2f5b9a',f:'#a8741c',p:'#4b7a52',h:'#a4442e',y:'#23797f',r:'#55514b',a:'#1c1b19'};
+window.RAW = RAW;
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const short = p => p.sn || p.n;
 
@@ -836,6 +874,7 @@ function lifeEvents(p) {
   return WORLD.filter(([y, , r]) => y >= b && y <= x && (r === 'all' || r.split(' ').some(k => regs.includes(k))));
 }
 function chips(ids) { return ids.filter(id => id && P[id]).map(id => `<button class="pp" data-open="${id}" style="--c:${RAW[P[id].s]}"><i></i>${esc(short(P[id]))}</button>`).join(''); }
+window.esc = esc; window.chips = chips;
 function openPerson(id, fromHash) {
   const p = P[id]; if (!p) return;
   sel = id; gN.querySelectorAll('.nd').forEach(n => n.classList.toggle('sel', n.dataset.id === id));
@@ -1052,7 +1091,7 @@ const chapEls = [...document.querySelectorAll('article.chap')];
 const chInfo = {}; chapEls.forEach((el, i) => { chInfo[el.id] = {n: i + 1, t: el.querySelector('h2').textContent, d: (el.querySelector('.when') || {}).textContent || '', c: (el.getAttribute('style') || '').match(/var\((--\w+)\)/)?.[1] || '--ink'}; });
 const lpBox = $('#lpBox'), lp = $('#lp'), linesBtn = $('#linesBtn'), lscrim = $('#lscrim');
 lpBox.innerHTML = FLINES.map((g, gi) => `<div class="grp" style="--c:var(${g.c});transition-delay:${60 + gi * 50}ms"><div class="who"><i></i>${g.who}</div><div class="sn">${g.sn}</div>${g.ch.map(id => `<a href="#${id}"><span class="n">${chInfo[id].n}</span><span class="t">${chInfo[id].t}</span><span class="d">${chInfo[id].d}</span></a>`).join('')}</div>`).join('') +
-  `<div class="foot"><a class="meet" href="#together">${chInfo.together.n} · ${chInfo.together.t}</a><a href="#tree">The tree</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a></div>`;
+  `<div class="foot"><a class="meet" href="#together">${chInfo.together.n} · ${chInfo.together.t}</a><a href="#tree">The tree</a><a href="#map">Map</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a></div>`;
 function setLP(o) { lp.classList.toggle('open', o); lscrim.classList.toggle('on', o); linesBtn.setAttribute('aria-expanded', o); if (o) setTimeout(() => lpBox.querySelector('a')?.focus({preventScroll: true}), 200); }
 linesBtn.addEventListener('click', e => { e.stopPropagation(); setLP(!lp.classList.contains('open')); });
 lscrim.addEventListener('click', () => setLP(false));
@@ -1083,6 +1122,63 @@ addEventListener('scroll', () => { $('#nav').classList.toggle('sc', scrollY > 10
 function route() { const h = location.hash; if (h.startsWith('#p-') && P[h.slice(3)]) openPerson(h.slice(3), true); }
 addEventListener('hashchange', route); route();
 }
+</script>
+<script src="mapdata.js"></script>
+<script>
+(function(){
+  const M = window.MAPDATA; if (!M) return;
+  const PEO = M.people, PL = M.places;
+  const NS = 'http://www.w3.org/2000/svg';
+  const maxG = Math.max(...Object.values(PEO).map(p => p.g));
+  const rng = document.getElementById('mgen'); rng.max = maxG; rng.min = 2; rng.value = maxG;
+  // slider runs oldest (left) to youngest (right)
+  const genOf = v => maxG + 2 - v;
+  const yr = {}; for (let g = 1; g <= maxG; g++) { const ys = Object.entries(PEO).filter(([id, p]) => p.g === g).map(([id]) => window.PEOPLE[id] && window.PEOPLE[id].b).filter(Boolean).sort((a, b) => a - b); yr[g] = ys.length ? ys[Math.floor(ys.length / 2)] : null; }
+  // fill missing years by spacing ~30 years
+  for (let g = 1; g <= maxG; g++) if (!yr[g]) yr[g] = (yr[g - 1] || 1990) - 30;
+  const svgs = {}, layers = {};
+  for (const k of ['eu', 'au']) {
+    const pn = M.panels[k], s = document.getElementById('m-' + k); svgs[k] = s;
+    s.setAttribute('viewBox', `0 0 ${pn.w} ${pn.h}`);
+    const land = document.createElementNS(NS, 'path'); land.setAttribute('class', 'land'); land.setAttribute('d', pn.d); s.appendChild(land);
+    layers[k] = {lk: s.appendChild(document.createElementNS(NS, 'g')), dt: s.appendChild(document.createElementNS(NS, 'g')), lb: s.appendChild(document.createElementNS(NS, 'g'))};
+  }
+  // links parent -> child within a panel
+  const links = [];
+  for (const [id, p] of Object.entries(PEO)) { const c = p.c && PEO[p.c]; if (!c) continue; const a = PL[p.pl], b = PL[c.pl]; if (!a || !b || a.pan !== b.pan || p.pl === c.pl) continue;
+    const el = document.createElementNS(NS, 'path'); const mx = (a.x + b.x) / 2 - (b.y - a.y) * .18, my = (a.y + b.y) / 2 + (b.x - a.x) * .18;
+    el.setAttribute('d', `M${a.x},${a.y} Q${mx},${my} ${b.x},${b.y}`); el.setAttribute('class', 'lk'); el.style.stroke = RAW[p.s] || '#888'; layers[a.pan].lk.appendChild(el); links.push({el, g: p.g}); }
+  // dots per place
+  const byPl = {}; for (const [id, p] of Object.entries(PEO)) (byPl[p.pl] = byPl[p.pl] || []).push(id);
+  const dots = [];
+  for (const [pl, ids] of Object.entries(byPl)) { const q = PL[pl]; if (!q) continue; const el = document.createElementNS(NS, 'circle'); el.setAttribute('cx', q.x); el.setAttribute('cy', q.y); el.setAttribute('class', 'dt'); layers[q.pan].dt.appendChild(el);
+    el.addEventListener('click', () => pick(pl)); dots.push({el, pl, ids}); }
+  let selPl = null;
+  function pick(pl) { selPl = pl; draw(); const ids = (byPl[pl] || []).filter(id => PEO[id].g >= cur).sort((a, b) => PEO[b].g - PEO[a].g);
+    document.getElementById('mwho').innerHTML = `<h4>${esc(pl)}</h4><div class="rel">${chips(ids)}</div>`; }
+  let cur = maxG;
+  function draw() {
+    for (const d of dots) { const vis = d.ids.filter(id => PEO[id].g >= cur); const now = vis.filter(id => PEO[id].g === cur);
+      if (!vis.length) { d.el.style.display = 'none'; continue; } d.el.style.display = '';
+      const top = (now.length ? now : vis).reduce((a, id) => PEO[id].g < PEO[a].g ? id : a);
+      d.el.style.fill = RAW[PEO[top].s] || '#888'; d.el.setAttribute('r', Math.min(4 + Math.sqrt(vis.length) * 2.2, 13)); d.el.classList.toggle('old', !now.length); d.el.classList.toggle('sel', d.pl === selPl); }
+    for (const l of links) { l.el.style.display = l.g > cur ? '' : 'none'; l.el.classList.toggle('old', l.g !== cur + 1); }
+    for (const k in layers) layers[k].lb.innerHTML = '';
+    const shown = new Set(); for (const d of dots) { if (d.el.style.display === 'none' || d.el.classList.contains('old')) continue; const q = PL[d.pl]; if (shown.has(d.pl)) continue; shown.add(d.pl);
+      const t = document.createElementNS(NS, 'text'); t.setAttribute('x', q.x + 8); t.setAttribute('y', q.y + 4); t.setAttribute('class', 'lb'); t.textContent = d.pl.split(',')[0]; layers[q.pan].lb.appendChild(t); }
+    const n = Object.values(PEO).filter(p => p.g === cur).length;
+    const rel = {1: 'parents', 2: 'grandparents', 3: 'great-grandparents'}[cur - 0] || '';
+    const name = cur === 2 ? 'grandparents' : cur === 3 ? 'great-grandparents' : cur === 1 ? 'parents' : (cur - 2) + '× great-grandparents';
+    document.getElementById('mlab').innerHTML = `<b>Angus and Elke's ${name}</b> · born around ${yr[cur]} · ${n} placed`;
+  }
+  function setG(g) { cur = g; rng.value = maxG + 2 - g; draw(); if (selPl) pick(selPl); }
+  rng.addEventListener('input', () => setG(genOf(+rng.value)));
+  let timer = null; const btn = document.getElementById('mplay');
+  btn.addEventListener('click', () => { if (timer) { clearInterval(timer); timer = null; btn.textContent = 'Play'; return; }
+    let g = cur <= 2 ? maxG : cur; setG(g); btn.textContent = 'Pause';
+    timer = setInterval(() => { g--; if (g < 2) { clearInterval(timer); timer = null; btn.textContent = 'Play'; return; } setG(g); }, 1600); });
+  setG(maxG);
+})();
 </script>
 </body>
 </html>
