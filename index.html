@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where Angus comes from</title>
+<title>Where Angus and Elke come from</title>
 <link rel="preload" as="image" href="img/groningen.jpg">
 <link rel="preload" as="image" href="img/parkinson-wedding-1935.jpg">
 <link rel="preload" as="image" href="img/fairsea.jpg">
@@ -340,7 +340,7 @@ aside.dr.on{transform:none}
 <body>
 
 <nav class="top" id="nav"><div class="in">
-  <a class="brand" href="#top">Angus's family</a>
+  <a class="brand" href="#top">Angus and Elke's family</a>
   <div class="links" id="links">
     <button class="lines" id="linesBtn" aria-expanded="false" aria-controls="lp"><span class="dots"><b style="background:var(--b)"></b><b style="background:var(--f)"></b><b style="background:var(--h)"></b><b style="background:var(--y)"></b></span>Family lines<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><a href="#tree">Tree</a><a href="#voyages">Voyages</a><a href="#timeline">Timeline</a><a href="#unknown">Still to find</a>
   </div>
@@ -356,7 +356,7 @@ aside.dr.on{transform:none}
 
 <header class="hero" id="top" data-era="2026">
   <div class="kick rv"><i></i>A family history · Broesder, Frankish and Hazenberg<i></i></div>
-  <h1 class="rv">Where Angus<br><em>comes from</em></h1>
+  <h1 class="rv">Where Angus and Elke<br><em>come from</em></h1>
   <p class="sub rv">Bakers from Groningen, a cattleman from the Frisian lakes, a Lincolnshire name kept for twelve generations, goldfields families, Yarra timber millers and a childhood in New Guinea. Every record found so far, gathered in one place.</p>
   <div class="spread" id="spread"></div>
   <div class="stats rv" id="stats"></div>
@@ -369,7 +369,7 @@ aside.dr.on{transform:none}
       <div>
         <div class="kick"><i></i>The tree</div>
         <h2>Uncover a generation at a time</h2>
-        <p>Angus is at the root. Tap the small circle above anyone to reveal their parents, or tap a person to read about them. Dashed lines are links that are likely but not yet proven.</p>
+        <p>Angus or Elke is at the root (switch below). Tap the small circle above anyone to reveal their parents, or tap a person to read about them. Dashed lines are links that are likely but not yet proven.</p>
       </div>
       <div class="tools">
         <div class="search"><input id="q" type="search" placeholder="Find a person" autocomplete="off" aria-label="Find a person"><div class="res" id="res"></div></div>
@@ -377,6 +377,8 @@ aside.dr.on{transform:none}
         <button class="tbtn" id="zout" aria-label="Zoom out">−</button>
         <button class="tbtn" id="fit">Fit</button>
         <button class="tbtn" id="all">Uncover all</button>
+        <button class="tbtn" data-root="angus">Angus</button>
+        <button class="tbtn" data-root="elke">Elke</button>
         <button class="tbtn" id="reset">Reset</button>
       </div>
     </div>
@@ -537,8 +539,8 @@ aside.dr.on{transform:none}
       <figure class="ph dev"><div class="fr"><img width="1302" height="924" decoding="async" src="img/mountisa1954.jpg" alt="The mine works at Mount Isa in 1954"></div><figcaption>The mines at Mount Isa in 1954.<small>State Library of Queensland, public domain.</small></figcaption></figure>
       <figure class="ph dev"><div class="fr"><img width="692" height="407" decoding="async" src="img/mareeba.jpg" alt="Three women inspecting a tobacco crop at Mareeba"></div><figcaption>Inspecting the tobacco crop at Mareeba, about 1938.<small>State Library of Queensland, no known restrictions.</small></figcaption></figure>
     </div>
-    <p class="rv">Rory married Claire Hazenberg, whose families had come by different roads again: a Frisian family who sailed in 1950, and a girl who grew up in New Guinea. Their son Angus is where all of them meet.</p>
-    <div class="people rv" data-people="greg merrilee rory claire angus"></div>
+    <p class="rv">Rory married Claire Hazenberg, whose families had come by different roads again: a Frisian family who sailed in 1950, and a girl who grew up in New Guinea. Their children, Angus and his little sister Elke, born in November 2026, are where all of them meet.</p>
+    <div class="people rv" data-people="greg merrilee rory claire angus elke"></div>
   </div>
 </article>
 </div>
@@ -571,7 +573,7 @@ aside.dr.on{transform:none}
 
 <footer>
   <div class="cols">
-    <div><h4>About</h4><p>Compiled in 2026 for Angus from civil, parish, migration and newspaper records, the family chart kept by the Hazenbergs, and <em>Webb of Intrigue</em> by Norman Ernest Smith (2008). Where a link is likely but not proven, it is marked.</p></div>
+    <div><h4>About</h4><p>Compiled in 2026 for Angus and Elke from civil, parish, migration and newspaper records, the family chart kept by the Hazenbergs, and <em>Webb of Intrigue</em> by Norman Ernest Smith (2008). Where a link is likely but not proven, it is marked.</p></div>
     <div><h4>Records</h4><ul><li><a href="https://www.openarchieven.nl/">Open Archives (Netherlands)</a></li><li><a href="https://www.freereg.org.uk/">FreeREG parish registers</a></li><li><a href="https://recordsearch.naa.gov.au/">National Archives of Australia</a></li><li><a href="https://www.ryersonindex.org/">Ryerson Index</a></li><li><a href="https://anzacportal.dva.gov.au/node/841">DVA: the 1941 evacuation</a></li></ul></div>
     <div><h4>Photographs</h4><p>Historical photographs from Wikimedia Commons, State Library of Queensland, Nationaal Archief, KITLV, Het Utrechts Archief, the Australian National Maritime Museum and Rijksdienst voor het Cultureel Erfgoed, under the licences given in each caption. Family photographs from the family's own collections.</p></div>
   </div>
@@ -987,7 +989,8 @@ const FAM = [
 [2012,'Doug Hymus dies, aged 85','y','doug'],
 [2021,'Meg dies at Bundaberg','h','meg'],
 [2022,'Jerry Broesder dies in Adelaide, aged 89','b','jerry'],
-[2023,'Carla Broesder dies in Adelaide','b','carla']];
+[2023,'Carla Broesder dies in Adelaide','b','carla'],
+[2026,'Elke Broesder is born, a little sister for Angus','a','elke']];
 const FIL = [['all','Everything'],['b','Broesder'],['f','Frankish'],['p','Parkinson, Smith, Webb'],['h','Hazenberg'],['y','Hymus and Brazier'],['w','World events']];
 let fil = 'all';
 function drawTL() {
