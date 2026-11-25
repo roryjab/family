@@ -339,6 +339,7 @@ aside.dr.on{transform:none}
 .jl button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--bg);border-radius:999px;padding:9px 16px;font:500 15px var(--sans);color:var(--ink);cursor:pointer}
 .jl button i{width:10px;height:10px;border-radius:50%;display:inline-block}
 .jl button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media (max-width:560px){.jl{gap:6px}.jl button{padding:7px 12px;font-size:14px;gap:6px}}
 .jbox{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
 @media (max-width:820px){.jbox{grid-template-columns:1fr}}
 .jmap{position:relative;background:#eef3f6;border:1px solid var(--rule);border-radius:16px;overflow:hidden}
@@ -952,15 +953,15 @@ $('#ledger tbody').innerHTML = V.map(([y, v, r, w, id]) => `<tr class="rv"><td c
 const FAM = [
 [1657,'Virgil Frankish marries Mary Pinder at Caistor, Lincolnshire','f','virgil1668'],
 [1752,'Virgil Frankish marries Mary Ellis at Frodingham','f','virgil0'],
-[1755,'Anna Hindriks born in Midwolda, Groningen','b','anna'],
+[1755,'Anna Hindriks baptised at Nieuw-Scheemda, Groningen','b','anna'],
 [1780,'Harm Derks "from Bonda" marries Anna Hindriks at Midwolda','b','harm'],
 [1782,'Hindrik Harms Broesder baptised at Midwolda, the first to carry the name','b','hindrik'],
 [1798,'Wiebe Willems marries Aafke Gales; their children take the name Hazenberg','h','wiebe'],
 [1800,'Jan Joosten Hulzebos, a tailor from East Frisia, marries at Oudeschans','b','janjh'],
 [1787,'Virgil Frankish marries Ann Hickson at Elsham','f','virgil1'],
-[1818,'Charles Houlton Webb born in London','p','drwebb'],
+[1818,'Charles Houlton Webb born, son of a Windsor minor canon','p','drwebb'],
 [1832,'Virgil Robert Frankish baptised at Barrow upon Humber; Christen Holst, a Danish mate, marries in Amsterdam','f','virgilr'],
-[1839,'Willem Wiebes Hazenberg marries Anna Grabhorn of Oldenburg','h','willemw'],
+[1839,'Willem Wiebes Hazenberg marries Anna Grabhorn, a German-born widow, at Smallingerland','h','willemw'],
 [1833,'Tjaard Hindriks Broesder, farmhand, marries Anje Jans Lewe','b','tjaardh'],
 [1848,'Dr Webb reaches Adelaide on the Hooghly','p','drwebb'],
 [1854,'Virgil Robert Frankish marries Jane Batler in Hull','f','virgilr'],
@@ -1024,15 +1025,15 @@ const FAM = [
 [1941,'Carla\'s father lost with the SS Groenlo','b','hendricus'],
 [1943,'Flight Sergeant Robert Frankish killed; Bruce Brazier enlists in Sydney and serves with ANGAU','f','raaf'],
 [1945,'Doug Hymus joins the RAAF in Brisbane, aged 18','y','doug'],
-[1950,'The Hazenbergs reach Sydney on the Johan van Oldenbarnevelt','h','bill'],
+[1950,'The Johan van Oldenbarnevelt calls at Fremantle on 4 October and lands the Hazenbergs at Sydney on 12 October','h','bill'],
 [1951,'The Braziers land at Brisbane from the Bulolo','y','beverly'],
 [1952,'Jerry reaches Sydney on the Fairsea','b','jerry'],
-[1960,'Bill Hazenberg\'s naturalisation file is registered in Brisbane','h','bill'],
+[1961,'Bill Hazenberg becomes an Australian citizen at Gooburrum, near Bundaberg','h','bill'],
 [1958,'Carla flies to Sydney; Lawrie marries Phyllis at Gladysdale','b','carla'],
 [1961,'Merrilee Frankish born at Yarra Junction','f','merrilee'],
 [1962,'Lawrie and Phyllis move to a 100-cow dairy at Murrabit, near Kerang','f','lawrie'],
 [1974,'Lawrie and Phyllis buy Marston, 3,000 acres at Tara','f','lawrie'],
-[1628,'Huguenot families from Walloon Flanders settle at Sandtoft, near the early Frankish parishes','f','lawrie'],
+[1650,'"Virgill" marries Ellen Swabye at Marshchapel, probably Virgil Frankish\'s first marriage','f','virgil1668'],
 [1869,'John Tudman marries Emma Pearson in Brisbane','h','johntudman'],
 [1906,'Everard Hodgetts born in Queensland','h','everard'],
 [1934,'Everard Hodgetts marries Amy Louisa Haken','h','amyh'],
@@ -1040,8 +1041,32 @@ const FAM = [
 [1994,'Aukje Hazenberg buried beside Taeke at Bundaberg','h','aukje'],
 [2012,'Doug Hymus dies, aged 85','y','doug'],
 [2021,'Meg dies at Bundaberg','h','meg'],
-[2022,'Jerry Broesder dies in Adelaide, aged 89','b','jerry'],
-[2023,'Carla Broesder dies in Adelaide','b','carla'],
+[2022,'Jerry Broesder dies, aged 89','b','jerry'],
+[2023,'Carla Broesder dies; her funeral Mass is held at Seacombe Gardens','b','carla'],
+[1669,'Wybren Klases born at Oostermeer, Friesland; he becomes village magistrate of Garijp','h','hzwybrenklases'],
+[1697,'The Linsens of Lommel, in the Kempen, have their first child baptised','b','tcwilhelmuslinsen'],
+[1705,'Virgil Frankish marries Susannah Dales at Caistor','f','virgil1705'],
+[1717,'Andries Aaldriks marries Rijktien Lukens at Sappemeer, Groningen','b','gsandriesaaldriks'],
+[1744,'Wijbe Wiggels, from whom the Hazenberg name comes, marries Trijntie Jinties at Tolbert','h','wijbewiggels'],
+[1782,'John Wilson marries Mary Philips at Langley, Essex','p','pkjohnwilsonsr'],
+[1783,'Peter van Gestel of Valkenswaard marries Johanna de Lepper at Tilburg','b','petervg'],
+[1813,'Benjamin Whatmough, a weaver, marries Sarah Brearley at Middleton, near Rochdale','p','benjaminw'],
+[1838,'George William Parkinson born in Bristol','p','georgewp'],
+[1844,'The Wilsons of Langley land at Port Phillip from the Royal Consort','p','johnwil'],
+[1845,'William Fisk marries Rebecca Thurlow at Framlingham, Suffolk','f','williamfisk'],
+[1847,'Robert Napier, a tailor from Largs, arrives in New South Wales','y','robertnsr'],
+[1854,'The Fisks reach Port Adelaide on the barque Historia','f','williamfisk'],
+[1860,'Robert Napier born at Liverpool, New South Wales','y','robertn'],
+[1863,'Hendrikus Degenhart, a cabinet maker from Kampen, marries at Zwolle and settles in Amsterdam','b','hjjd'],
+[1864,'John Tudman of Colby, Norfolk, leaves for Queensland','h','johntudman'],
+[1872,'Frank Warbrick born at Oldham, Lancashire','y','frank'],
+[1874,'Martha Warbrick dies at sea on the Zoroaster; her three children land at Brisbane as orphans','y','marthamoore'],
+[1883,'George Herbert Brazier reaches Queensland on the Scottish Admiral','y','george'],
+[1888,'Edward Charles Hymus of Bartlow reaches Queensland on the Dorunda','y','edwardch'],
+[1900,'Rosetta Bastock comes out on the Oruba to marry Joseph Hodgetts','h','rosetta'],
+[1906,'Charlie Fisk marries Matilda Anthony at Kalgoorlie','f','edwardf'],
+[1929,'Jakob Tjaart Broesder marries Grietje de Bruijn at Schelluinen','b','grietje'],
+[1975,'Jakob Tjaart Broesder dies at Nowra, New South Wales','b','jakobt'],
 [2026,'Elke Broesder is born, a little sister for Angus','a','elke']];
 const FIL = [['all','Everything'],['b','Broesder'],['f','Frankish'],['p','Parkinson, Smith, Webb'],['h','Hazenberg'],['y','Hymus and Brazier'],['w','World events']];
 let fil = 'all';
@@ -1153,23 +1178,41 @@ addEventListener('hashchange', route); route();
   const C = {b:'#2f5b9a',f:'#a8741c',p:'#4b7a52',h:'#a4442e',y:'#23797f'};
   const J = [
    {k:'b', name:'Broesder', who:"Dad's dad's family", steps:[
-    ['1780','Midwolda','Harm Derks, a labourer from just over the border in East Frisia, marries Anna Hindriks at Midwolda in Groningen.','harm'],
+    ['1717','Sappemeer','Andries Aaldriks marries Rijktien Lukens at Sappemeer, in the Groningen peat colonies. Their son Aaldrik is probably the village innkeeper whose descendants include Jerry’s grandmother Antje Dijk.','gsandriesaaldriks'],
+    ['1780','Midwolda','Harm Derks, a labourer recorded as “van Bonda”, probably from Bunde just over the border in East Frisia, marries Anna Hindriks at Midwolda in Groningen.','harm'],
     ['1782','Midwolda','Their son Hindrik is baptised. He is the first known Broesder: Dutch families had to take fixed surnames in 1811.','hindrik'],
-    ['1808','Finsterwolde','Tjaard Hindriks Broesder is born. He works as a farmhand.','tjaardh'],
+    ['1808','Finsterwolde','Tjaard Hindriks Broesder is born. A farmhand, he marries at Nieuwolda in 1833 and settles at Wagenborgen.','tjaardh'],
     ['1843','Wagenborgen','Jakob Broesder is born. He too is a farm labourer.','jakob'],
     ['1871','Nieuwolda','Tjaard Broesder is born. He becomes the village baker, and later runs a café at Zuidlaren.','tjaardj'],
-    ['1902','Nieuwolda','Jakob Tjaart Broesder is born. Unlike his brothers, he moves south to the river country around Dordrecht.','jakobt'],
+    ['1902','Nieuwolda','Jakob Tjaart Broesder is born. As a young man he lives in Utrecht, and later works as a driver at Gorinchem.','jakobt'],
+    ['1929','Schelluinen','Jakob Tjaart marries Grietje de Bruijn, an innkeeper’s daughter, at Schelluinen, just north of Gorinchem.','grietje'],
     ['1932','Dordrecht','Jerry Broesder is born. He is twelve in the Hunger Winter of 1944–45.','jerry'],
-    ['1952','Sydney','Jerry, aged 20, sails to Australia on the Fairsea.','jerry','Fairsea'],
+    ['1952','Sydney','Jerry, aged 20, sails to Australia on the Fairsea and reaches Sydney on 10 October.','jerry','Fairsea'],
     ['1950s on','Adelaide','Jerry marries Carla Degenhart and they raise five children in Adelaide, Greg among them.','greg'],
+    ['1975','Nowra','Jerry’s father, Jakob Tjaart Broesder, dies at Nowra on the south coast of New South Wales, aged 72.','jakobt'],
+    ['Later','Mount Isa','Greg meets Merrilee Frankish in the mining town of Mount Isa.','greg'],
+    ['','Cairns','Rory is born in Cairns, and grows up at Mareeba.','rory']]},
+   {k:'b', name:'Degenhart', who:"Dad's dad's mum's family", steps:[
+    ['1697','Lommel','Wilhelmus Linsen and Elisabeth Bourlet have the first of nine children baptised at Lommel, a Kempen village now in Belgium. Their youngest, Elisabeth, is born in 1717.','tcwilhelmuslinsen'],
+    ['1758','Valkenswaard','Elisabeth’s son Peter van Gestel is baptised at Valkenswaard. He moves to Tilburg and marries there in 1783.','petervg'],
+    ['c. 1793','Nordborg','Christen Holst is born at Nordborg on the island of Als, now in Denmark. He becomes a ship’s mate and marries in Amsterdam in 1832.','christen'],
+    ['c. 1834','Kassel','Georg Bruckmann is born at Kassel, the son of a cloth weaver. A seaman, he marries Christen’s daughter Hendrina in Amsterdam in 1862.','georg'],
+    ['1836','Kampen','Hendrikus Degenhart is born at Kampen, the son of a tailor. A cabinet maker, he marries in 1863 and settles in Amsterdam.','hjjd'],
+    ['1871','Tilburg','Josephus van den Berg, Peter van Gestel’s great-grandson, is born at Tilburg. A shoemaker, he moves with the shoe trade from town to town.','josephus'],
+    ['1901','Meppel','His daughter Maria van den Berg is born at Meppel in Drenthe.','mariavdb'],
+    ['1929','Amsterdam','Maria marries Hendricus Degenhart, a merchant-navy engineer and a grandson of both Hendrikus and Georg. He is lost with the SS Groenlo in 1941, when Carla is six.','hendricus'],
+    ['1958','Sydney','Carla, aged 23, flies alone to Australia and lands in Sydney on 4 November.','carla','Flew to Sydney'],
+    ['Later','Adelaide','Carla marries Jerry Broesder, and they raise five children in Adelaide, Greg among them.','greg'],
     ['Later','Mount Isa','Greg meets Merrilee Frankish in the mining town of Mount Isa.','greg'],
     ['','Cairns','Rory is born in Cairns, and grows up at Mareeba.','rory']]},
    {k:'f', name:'Frankish', who:"Dad's mum's dad's family", steps:[
-    ['1657','Caistor','Virgil Frankish marries Mary Pinder at Caistor in Lincolnshire. This is the earliest family record found.','virgil1668'],
-    ['1752','Frodingham','Another Virgil Frankish marries Mary Ellis at Frodingham.','virgil0'],
+    ['1650','Marshchapel','A groom written down only as “Virgill” marries Ellen Swabye at Marshchapel, on the coastal marsh between Grimsby and Louth. This is probably Virgil Frankish’s first marriage.','virgil1668'],
+    ['1657','Caistor','Virgil Frankish of Marshchapel, a widower, marries Mary Pinder at Caistor. It is the earliest record of him under his full name.','virgil1668'],
+    ['1705','Caistor','His youngest son Virgil, baptised in 1683, marries Susannah Dales at Caistor.','virgil1705'],
+    ['1752','Frodingham','A Virgil Frankish, probably their son baptised at Caistor in 1724, marries Mary Ellis at Frodingham.','virgil0'],
     ['1757','Hibaldstow','Their son Virgil is baptised. He later marries Ann Hickson at Elsham.','virgil1'],
-    ['1793','Elsham','Thomas Frankish is baptised at Elsham. He dies young, leaving a baby son.','thomas1'],
-    ['1832','Barrow upon Humber','That baby, Virgil Robert Frankish, is baptised. He grows up to work in Hull.','virgilr'],
+    ['1793','Elsham','Thomas Frankish is baptised at Elsham. He works as a servant at Barrow upon Humber and dies in 1833, leaving a baby son.','thomas1'],
+    ['1832','Barrow upon Humber','That baby, Virgil Robert Frankish, is baptised. He grows up in Hull and works there as a brass finisher.','virgilr'],
     ['1863','Hull','Thomas Frankish is born in Hull. He marries Emily Wetherall and they have three boys.','thomas2'],
     ['1897','Albany','Emily and the three boys land at Albany from the mail steamer Orizaba. Thomas has gone ahead to work on the railways.','thomas2','Orizaba'],
     ['1904','Northam','Walter Frankish is born at Northam, the railway town on the way to the goldfields.','walter'],
@@ -1177,35 +1220,84 @@ addEventListener('hashchange', route); route();
     ['1961','Yarra Junction','Lawrie and Phyllis are farming in Victoria when Merrilee is born.','merrilee'],
     ['Later','Mount Isa','Merrilee meets Greg Broesder in Mount Isa.','merrilee'],
     ['','Cairns','Rory is born in Cairns.','rory']]},
+   {k:'f', name:'Fisk', who:"Dad's mum's dad's mum's family", steps:[
+    ['1814','Lewes, Sussex','Harry Munro Roscorla is baptised at Lewes, the son of a schoolmaster. Roscorla is a Cornish name.','harryroscorla'],
+    ['1838','Brighton','Harry, now a carpenter, marries Sarah Ann Hindmarsh at Brighton. Within months they sail for South Australia.','harryroscorla'],
+    ['1845','Framlingham, Suffolk','William Fisk, a glazier, marries Rebecca Thurlow at Framlingham.','williamfisk'],
+    ['1847','Saxmundham, Suffolk','Their son John William Fisk is born at Saxmundham, Rebecca’s home town.','johnwfisk'],
+    ['1854','Adelaide','The Fisks sail from Plymouth on the barque Historia and reach Port Adelaide in July. William works in Adelaide as a plumber.','williamfisk','Historia'],
+    ['1870','Adelaide','John William Fisk marries Harry Roscorla’s daughter Elizabeth Margaret at St Paul’s, Adelaide.','rebeccafisk'],
+    ['1873','Sebastopol','Matilda Anthony is born at Sebastopol, near Ballarat, the daughter of a gold miner.','matilda'],
+    ['c. 1879','Adelaide','Edward Charles Fisk, known as Charlie, is born. His mother dies when he is about five.','edwardf'],
+    ['1906','Kalgoorlie','Charlie goes west in the gold years and marries Matilda Anthony at Kalgoorlie. Their daughter Mona is born there in 1907.','mona'],
+    ['1931','Perth','The family have moved to Perth. Mona marries Walter Frankish at St George’s Cathedral, and their son Lawrie is born in 1937.','mona'],
+    ['1961','Yarra Junction','Lawrie and Phyllis are farming in Victoria when Merrilee is born.','merrilee'],
+    ['Later','Mount Isa','Merrilee meets Greg Broesder in Mount Isa.','merrilee'],
+    ['','Cairns','Rory is born in Cairns.','rory']]},
    {k:'p', name:'Smith and Parkinson', who:"Dad's mum's mum's family", steps:[
-    ['1848','Fenny Stratford','Joseph Henry Smith is born in 1848, the son of a labourer. The family live at Fenny Stratford in Buckinghamshire before they emigrate.','jhsmith'],
-    ['1857','Melbourne','The family sail to Melbourne on the Appleton. The trip takes 102 days. Joseph Henry is eight.','joseph','Appleton'],
-    ['1875','Prahran','Joseph Henry is a brickmaker in Prahran, where his son Ern is born. Ern becomes a painter and paperhanger.','ern'],
-    ['1907','Prahran','Ern’s daughter Alma is born.','alma'],
-    ['c. 1911','Hoddles Creek','Ern moves the family to Hoddles Creek in the hills of the Upper Yarra. Alma grows up there and marries Ben Parkinson.','alma'],
-    ['1936','Yarra Junction','Phyllis Parkinson is born. She marries Lawrie Frankish.','phyllis'],
-    ['1961','Yarra Junction','Merrilee is born.','merrilee'],
+    ['1798','Langley, Essex','John Wilson is baptised at Langley, a small Essex parish on the Hertfordshire border, where his parents had married in 1782.','johnwil'],
+    ['1815','Rochdale','Robert Whatmough is born at Rochdale, the son of a weaver. He becomes one of the early fruit growers on the Plenty River near Melbourne.','robertwh'],
+    ['1838','Bristol','George William Parkinson is born in Bristol, a few months after his parents marry there. The family are in Victoria by 1854.','georgewp'],
+    ['1848','Fenny Stratford','Joseph Henry Smith is born, the son of Joseph Smith, a labourer born in Suffolk. Before they emigrate the family live at Fenny Stratford in Buckinghamshire.','jhsmith'],
+    ['1857','Melbourne','The Smiths sail to Melbourne on the Appleton. The trip takes 102 days. Joseph Henry is eight.','joseph','Appleton'],
+    ['1869','Diamond Creek','Martha Wilson is born at Diamond Creek, a granddaughter of Robert Whatmough and of John Wilson, who brought his family out in 1844.','martha'],
+    ['1875','Prahran','Joseph Henry is a brickmaker in Prahran, where his son Ern is born. Ern becomes a painter and paperhanger, and his daughter Alma is born at Armadale in 1907.','ern'],
+    ['1877','Greendale','William George Parkinson, Grandpa Parky, is born at Greendale, near the Blackwood goldfield, where his father George has settled.','wgp'],
+    ['1908','Thornton, Victoria','William marries Martha Wilson, and their son Ben is born at Thornton, near Alexandra.','ben'],
+    ['c. 1911','Hoddles Creek','Ern moves the family to Hoddles Creek in the Upper Yarra, and Martha Parkinson brings her children there in 1917. Alma marries Ben Parkinson in 1935.','alma'],
+    ['1936','Yarra Junction','Phyllis Parkinson is born. She marries Lawrie Frankish, and their daughter Merrilee is born at Yarra Junction in 1961.','phyllis'],
     ['Later','Mount Isa','Merrilee meets Greg Broesder in Mount Isa.','merrilee'],
     ['','Cairns','Rory is born in Cairns.','rory']]},
    {k:'h', name:'Hazenberg', who:"Mum's dad's family", steps:[
-    ['1798','Leek','Wiebe Willems marries Aafke Gales and they make their home at Leek in Groningen. Their children take the name Hazenberg.','wiebe'],
-    ['c. 1798','Leek','Willem Wiebes Hazenberg is born. He becomes a merchant and moves to Friesland.','willemw'],
+    ['1669','Oostermeer','Wybren Klases is born at Oostermeer in Friesland. He becomes village magistrate of nearby Garijp; his descendants include the Iedemas of Oostermeer, the family of Bill’s great-grandmother Aaltje.','hzwybrenklases'],
+    ['1744','Tolbert','Wijbe Wiggels marries Trijntie Jinties at Tolbert, beside Leek in the Westerkwartier of Groningen. The name Hazenberg comes down from him through his daughter Lootske.','wijbewiggels'],
+    ['1772','Grootegast','Lootske marries Willem Harms of Grootegast. Their son Wiebe is baptised there in 1776.','lootske'],
+    ['1798','Leek','Wiebe Willems marries Aafke Gales and they make their home at Leek. Their children take the name Hazenberg.','wiebe'],
+    ['1799','Leek','Willem Wiebes Hazenberg is born. He becomes a merchant and moves to Friesland.','willemw'],
     ['1842','Augustinusga','Hendrik Willems Hazenberg is born.','hendrikw'],
     ['1877','Bergum','Willem Hendriks Hazenberg is born and raised at Bergum. He farms around Grouw and Warga.','willemh'],
     ['1910','Grouw','Taeke Hazenberg is born. He becomes a cattleman.','taeke'],
     ['1936','Irnsum','Bill (Willem) Hazenberg is born.','bill'],
-    ['1950','Sydney','Taeke, Aukje, Bill and his sisters sail to Australia on the Johan van Oldenbarnevelt. Bill is 14.','bill','Johan van Oldenbarnevelt'],
+    ['1950','Sydney','Taeke, Aukje, Bill and his sisters sail to Australia on the Johan van Oldenbarnevelt. The ship calls at Fremantle on 4 October and lands them at Sydney on 12 October, when Bill is 14.','bill','Johan van Oldenbarnevelt'],
     ['1950','Monto','The family spend their first year at Monto in Queensland.','taeke'],
-    ['1964','Bundaberg','The family settle at Bundaberg. Bill marries Meg Hodgetts, and their son Trevor is born.','trevor'],
+    ['1959','Bundaberg','After that year the family move to Bundaberg, where Bill marries Meg Hodgetts in 1959. Their son Trevor is born there in 1964.','meg'],
     ['','','Trevor marries Sue, and they are Claire’s mum and dad.','claire']]},
-   {k:'y', name:'Brazier', who:"Mum's mum's family", steps:[
-    ['1840','Melksham, Wiltshire','James Coles Brazier marries Caroline Taylor in Wiltshire.','jamescb'],
-    ['1860','Wilton, Wiltshire','Their son George Herbert Brazier is born near Salisbury.','george'],
-    ['1893','Brisbane','George has emigrated to Queensland. He marries Ellen Baldwin in Brisbane.','george','To Queensland'],
-    ['1900','Toowoomba','Bruce Wilton Brazier is born, named after his father’s birthplace.','bruce'],
-    ['1933','Rabaul','Bruce works for the New Guinea administration. Beverly is born there.','beverly'],
+   {k:'h', name:'Hodgetts', who:"Mum's dad's mum's family", steps:[
+    ['1810','Hevingham, Norfolk','Thomas Tudman is born at Hevingham in Norfolk. He works as a farm labourer.','thomastudman'],
+    ['1841','Colby, Norfolk','His son John Tudman is born at Colby. In 1864 he leaves for Queensland.','johntudman'],
+    ['1855','Lincoln','Louisa Mitton is born at Lincoln, the daughter of a wireworker, and her family move to Brisbane in the 1860s. She is probably the Grace Redman who marries George Haken in 1877.','louisaredmund'],
+    ['1869','Brisbane','John Tudman marries Emma Pearson in Brisbane. They take up land on the Logan River near Jimboomba.','johntudman'],
+    ['1870','Aston','Joseph Hodgetts is born at Aston, Birmingham. He becomes an iron moulder and goes out to Queensland.','josephh'],
+    ['1900','Bundaberg','Rosetta Bastock, a spoon buffer from Aston, comes out on the steamer Oruba to marry Joseph. They farm in the Rosedale district, then grow strawberries at Bundaberg.','rosetta','Oruba'],
+    ['1906','Rosedale','Everard Hodgetts is born while his parents are farming at Rosedale, between Bundaberg and Gladstone.','everard'],
+    ['1910','Childers','Amy Haken is born, the eldest daughter of Grace’s son Gordon Haken and John Tudman’s daughter Mary May. The family live at Childers and move to Bundaberg about 1919.','amyh'],
+    ['1937','Bundaberg','Everard Hodgetts and Amy Haken, married in 1934, raise a large family around Bundaberg and Gin Gin. Meg is born in 1937.','meg'],
+    ['1959','Bundaberg','Meg marries Bill Hazenberg at the Barolin Street Methodist Church, Bundaberg.','meg'],
+    ['','','Their son Trevor marries Sue, and they are Claire’s mum and dad.','trevor']]},
+   {k:'y', name:'Brazier', who:"Mum's mum's mum's family", steps:[
+    ['c. 1817','Wilton, Wiltshire','James Coles Brazier is born at Wilton, near Salisbury. He becomes a plumber, glazier and painter.','jamescb'],
+    ['1840','Trowbridge, Wiltshire','James marries Caroline Taylor, and they begin married life in her home town of Trowbridge.','caroline'],
+    ['1860','Wilton, Wiltshire','The family are back in North Street, Wilton, when their son George Herbert Brazier is born.','george'],
+    ['1872','Oldham','Frank Warbrick is born at Oldham, Lancashire, the son of a mechanic and a cotton weaver. His father dies in the same months.','frank'],
+    ['1874','Brisbane','Frank’s widowed mother Martha sails for Queensland on the Zoroaster with her three children. She dies at sea on 22 August, and the children land at Brisbane as orphans.','marthamoore','Zoroaster'],
+    ['1883','Toowoomba','George Brazier and his brother Mark come out to Queensland on the Scottish Admiral. George settles at Toowoomba on the Darling Downs.','george'],
+    ['1900','Toowoomba','Bruce Wilton Brazier is born; his middle name is his father’s home town. George had married Ellen Baldwin, from Suffolk, in Brisbane in 1893.','bruce'],
+    ['1903','Brisbane','Aileen Warbrick is born in Brisbane, the only child of Frank, now an insurance adjuster, and Adele White.','aileen'],
+    ['1933','Rabaul','Bruce, a clerk in the New Guinea service, marries Aileen in 1929 and they live at Rabaul and Kokopo. Beverly is born in New Guinea in 1933.','beverly'],
     ['1934','Brisbane','Beverly, aged one, sails from Rabaul to Brisbane on the Montoro.','beverly','Montoro'],
-    ['','','Beverly marries Doug Hymus. Their daughter Sue is Claire’s mum.','sue']]}
+    ['','','Beverly marries Doug Hymus. Their daughter Sue is Claire’s mum.','sue']]},
+   {k:'y', name:'Hymus', who:"Mum's mum's dad's family", steps:[
+    ['c. 1813','Bartlow','Charles Hymus is born at Bartlow, on the Cambridgeshire–Essex border. A farm labourer all his life, he marries Mary Kidman of Linton.','williamhymus'],
+    ['c. 1825','Largs, Ayrshire','Robert Napier is born at Largs on the Firth of Clyde. A tailor, he goes out to New South Wales in 1847.','robertnsr'],
+    ['1860','Liverpool, New South Wales','His son Robert Napier is born at Liverpool, on the edge of Sydney, while the family farm at Moorebank.','robertn'],
+    ['1869','Linton, Cambridgeshire','Edward Charles Hymus, Charles’s grandson, is born at Linton. He grows up in the family’s cottage at Bartlow.','edwardch'],
+    ['1869','Wimborne, Dorset','Frances Horsford is born in the Wimborne district of Dorset. Her parents sail for Queensland in 1885, and she probably follows them in 1888.','frances'],
+    ['1888','Townsville','Edward, aged 18, sails to Queensland on the Dorunda with two of his uncles. He marries Frances Horsford in 1895 and works in Townsville as a carrier.','edwardch','Dorunda'],
+    ['1896','Townsville','Saddie Napier is born, the daughter of Robert Napier and Ethel Harvey. The family live for many years in Townsville and later settle at Charters Towers.','saddie'],
+    ['1927','Cooroy','Doug Hymus is born at Cooroy, where his father Frank, Edward’s son, is teller at the Bank of New South Wales. Frank had married Saddie Napier in 1921.','doug'],
+    ['1951','Charters Towers','Frank is now the bank’s manager at Charters Towers. Doug, aged 24, becomes engaged to Beverly Brazier.','francish'],
+    ['1956','Cairns','By early 1956 Doug and Beverly are married and living in Cairns.','beverly'],
+    ['','','Their daughter Sue is Claire’s mum.','sue']]}
   ];
   let ji = 0, si = 0;
   const svg = document.getElementById('jsvg');
@@ -1219,15 +1311,16 @@ addEventListener('hashchange', route); route();
     jl.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-selected', i === ji));
     const pn = pan(si); svg.innerHTML = '';
     svg.appendChild(el('path', {class: 'land', d: M.panels[pn].d}));
-    document.getElementById('jreg').textContent = pn === 'eu' ? 'England and the Netherlands' : 'Australia and New Guinea';
+    document.getElementById('jreg').textContent = pn === 'eu' ? 'Britain and northern Europe' : 'Australia and New Guinea';
     // route on this panel up to current
     const pts = []; for (let k = 0; k <= si; k++) { const st = steps[k], q = PL[st[1]]; if (q && q.pan === pn) pts.push({k, q, ship: st[4]}); }
-    for (let n = 1; n < pts.length; n++) { const a = pts[n - 1].q, b = pts[n].q; if (a.x === b.x && a.y === b.y) continue;
+    // a sea or air arrival from the other side of the world arcs in from the edge; any other move is a straight line from the previous stop on this map
+    const abroad = p => { if (!p.ship || pn !== 'au') return false; const pr = steps[p.k - 1], pq = pr && PL[pr[1]]; return !pq || pq.pan !== pn; };
+    for (let n = 0; n < pts.length; n++) { const b = pts[n].q;
+      if (abroad(pts[n])) { const from = b.y > 300 ? [0, 300] : [0, 140];
+        svg.appendChild(el('path', {class: 'sea', d: `M${from[0]},${from[1]} Q${(from[0] + b.x) / 2},${Math.min(from[1], b.y) - 60} ${b.x},${b.y}`, stroke: col})); continue; }
+      if (!n) continue; const a = pts[n - 1].q; if (a.x === b.x && a.y === b.y) continue;
       svg.appendChild(el('path', {class: pts[n].ship ? 'sea' : 'rt', d: `M${a.x},${a.y} L${b.x},${b.y}`, stroke: col})); }
-    // arrival from overseas
-    const first = pts[0]; if (first && steps[first.k][4] && pn === 'au' && steps[first.k][1] !== 'Brisbane' || (first && pn === 'au' && first.k > 0 && !pts.some(p => p.k === first.k - 1) && steps[first.k][4])) {
-      const q = first.q; const from = steps[first.k][1] === 'Albany' ? [0, 300] : [0, 140];
-      svg.appendChild(el('path', {class: 'sea', d: `M${from[0]},${from[1]} Q${(from[0] + q.x) / 2},${Math.min(from[1], q.y) - 60} ${q.x},${q.y}`, stroke: col})); }
     const seen = {};
     pts.forEach((p, n) => { const cur = p.k === si; const key = p.q.x + ',' + p.q.y; const off = seen[key] = (seen[key] || 0) + 1;
       if (cur) { svg.appendChild(el('circle', {class: 'halo', cx: p.q.x, cy: p.q.y, r: 26, fill: col})); }
@@ -1235,10 +1328,10 @@ addEventListener('hashchange', route); route();
       svg.appendChild(el('circle', {class: cur ? 'cur' : 'st', cx: p.q.x, cy: p.q.y, r: cur ? 13 : 10, fill: col}));
       const t = el('text', {class: 'nb', x: p.q.x, y: p.q.y}); t.textContent = p.k + 1; svg.appendChild(t); });
     const st = steps[si], q = PL[st[1]];
-    if (q && q.pan === pn) { const lb = el('text', {class: 'lb', x: q.x + (q.x > 470 ? -20 : 20), y: q.y - 18, 'text-anchor': q.x > 470 ? 'end' : 'start'}); lb.textContent = st[1].split(',')[0]; svg.appendChild(lb); }
+    if (q && q.pan === pn) { const lb = el('text', {class: 'lb', x: q.x + (q.x > 470 ? -20 : 20), y: q.y < 40 ? q.y + 32 : q.y - 18, 'text-anchor': q.x > 470 ? 'end' : 'start'}); lb.textContent = st[1].split(',')[0]; svg.appendChild(lb); }
     document.getElementById('jstep').innerHTML = `<div class="yr">${st[0] || '&nbsp;'}</div>`
       + `<div class="pl"><i style="background:${col}"></i>${st[1] ? esc(st[1]) : j.who}</div>`
-      + (st[4] ? `<div class="ship">${st[4] === 'To Queensland' ? 'Sailed to Queensland' : 'Sailed on the ' + esc(st[4])}</div>` : '')
+      + (st[4] ? `<div class="ship">${/^Flew/.test(st[4]) ? esc(st[4]) : 'Sailed on the ' + esc(st[4])}</div>` : '')
       + `<p>${esc(st[2])}</p>` + (st[3] ? `<button class="pp" data-open="${st[3]}" style="--c:${col}"><i></i>Read about ${esc((window.PEOPLE[st[3]] || {}).sn || (window.PEOPLE[st[3]] || {}).n || '')}</button>` : '');
     document.getElementById('jdots').innerHTML = steps.map((s, k) => `<button data-s="${k}" class="${k === si ? 'on' : k < si ? 'done' : ''}" style="${k === si ? 'background:' + col : ''}" aria-label="Step ${k + 1}">${k + 1}</button>`).join('')
       + `<button data-s="${steps.length}" class="${si === steps.length ? 'on' : ''}" style="width:auto;padding:0 10px;${si === steps.length ? 'background:' + col : ''}">Angus &amp; Elke</button>`;
